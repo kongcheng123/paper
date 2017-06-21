@@ -1,0 +1,2310 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+
+
+
+
+
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+<title>[YARN-6627] Use deployed webapp folder to launch new YARN UI - ASF JIRA</title>
+<meta name="application-name" content="JIRA" data-name="jira" data-version="6.3.15"><meta name="ajs-hasCriteriaAutoUpdate" content="true">
+<meta name="ajs-viewissue-use-history-api" content="false">
+<meta name="ajs-viewissue-max-cache-size" content="">
+<meta name="ajs-view-issue-trace-key" content="jira.issue.refreshed">
+<meta name="ajs-view-issue-psycho-key" content="jira.psycho.issue.refreshed">
+<meta name="ajs-view-issue-refreshed-cached-key" content="jira.psycho.issue.refreshed.cached">
+<meta name="ajs-return-to-search-trace-key" content="jira.returned.to.search">
+<meta name="ajs-return-to-search-psycho-key" content="jira.psycho.returned.to.search">
+<meta name="ajs-default-avatar-url" content="/jira/secure/useravatar?size=xsmall&amp;avatarId=10453">
+<meta name="ajs-jira.issues.preferred.layout.key" content="split-view">
+<meta name="ajs-max-recent-searchers" content="10">
+<meta name="ajs-jira-base-url" content="https://issues.apache.org/jira">
+<meta name="ajs-serverRenderedViewIssue" content="true">
+<meta name="ajs-can-search-users" content="true">
+<meta name="ajs-can-edit-watchers" content="false">
+<meta name="ajs-issue-key" content="YARN-6627">
+<meta name="ajs-server-view-issue-is-editable" content="false">
+<meta name="ajs-dev-mode" content="false">
+<meta name="ajs-context-path" content="/jira">
+<meta name="ajs-version-number" content="6.3.15">
+<meta name="ajs-build-number" content="6346">
+<meta name="ajs-is-beta" content="false">
+<meta name="ajs-is-rc" content="false">
+<meta name="ajs-is-snapshot" content="false">
+<meta name="ajs-is-milestone" content="false">
+<meta name="ajs-remote-user" content="zhenyi">
+<meta name="ajs-remote-user-fullname" content="fangzhenyi">
+<meta name="ajs-user-locale" content="en_UK">
+<meta name="ajs-user-locale-group-separator" content=",">
+<meta name="ajs-app-title" content="ASF JIRA">
+<meta name="ajs-keyboard-shortcuts-enabled" content="true">
+<meta name="ajs-keyboard-accesskey-modifier" content="Ctrl+Alt">
+<meta name="ajs-enabled-dark-features" content="[&quot;jira.plugin.devstatus.phasetwo.enabled&quot;,&quot;com.atlassian.jira.config.PDL&quot;,&quot;jira.frother.reporter.field&quot;,&quot;jira.plugin.devstatus.phasetwo&quot;,&quot;com.atlassian.jira.darkfeature.CommonHeader&quot;,&quot;app-switcher.new&quot;,&quot;frother.assignee.field&quot;,&quot;jira.issue.status.lozenge&quot;]">
+<meta name="ajs-date-relativize" content="true">
+<meta name="ajs-date-time" content="HH:mm">
+<meta name="ajs-date-day" content="EEEE HH:mm">
+<meta name="ajs-date-dmy" content="dd/MMM/yy">
+<meta name="ajs-date-complete" content="dd/MMM/yy HH:mm">
+<meta name="ajs-in-admin-mode" content="false">
+<meta name="ajs-is-sysadmin" content="false">
+<meta name="ajs-is-admin" content="false">
+<meta name="ajs-outgoing-mail-enabled" content="true">
+<meta name="stp-license-product-name" content="JIRA"/> <meta name="stp-license-days-to-expiry" content="206"/> <meta name="stp-license-is-admin" content="false"/> <meta name="stp-license-should-keep-banner-hidden" content="true"/><meta name="ajs-whats-new-iframe-src" content="https://docs.atlassian.com/jira/docs-063/whatsnew/iframe?od=false&amp;a=false&amp;pa=false"> <meta name="ajs-whatsnew-full-link" content="https://docs.atlassian.com/jira/docs-063/whatsnew/full?od=false&amp;a=false&amp;pa=false">
+
+
+    
+<meta id="atlassian-token" name="atlassian-token" content="A5KQ-2QAV-T4JA-FDED|eb8a3221768de30e2d8cbb612b22d479e2e51c48|lin">
+
+
+
+<link rel="shortcut icon" href="/jira/s/en_UK-6etnyn/6346/236/_/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/jira/osd.jsp" title="[YARN-6627] Use deployed webapp folder to launch new YARN UI - ASF JIRA"/>
+
+    
+
+
+<!--[if IE]><![endif]-->
+<script type="text/javascript">var contextPath = '/jira';</script>
+<script>
+window.WRM=window.WRM||{};window.WRM._unparsedData=window.WRM._unparsedData||{};
+WRM._unparsedData["com.atlassian.plugins.atlassian-plugins-webresource-plugin:context-path.context-path"]="\"/jira\"";
+WRM._unparsedData["com.atlassian.plugins.base-hipchat-integration-plugin:configure-integration-data.configure-integration"]="{\"inviteEnabled\":false}";
+WRM._unparsedData["com.atlassian.plugins.base-hipchat-integration-plugin:hipchat-installed-scopes.scopes"]="{\"view_group\":true,\"manage_rooms\":true,\"send_message\":true,\"view_messages\":true,\"send_notification\":true,\"admin_group\":true}";
+WRM._unparsedData["com.atlassian.plugins.base-hipchat-integration-plugin:hipchat-user-link-support.user-link-context"]="{\"userLinked\":false,\"userHasManageRoomsScope\":true,\"beginOauth\":\"https://issues.apache.org/jira/rest/hipchat/integration/latest/oauth2/begin\"}";
+WRM._unparsedData["com.atlassian.plugins.base-hipchat-integration-plugin:integration-steps-resources.enable-invite"]="{\"inviteToHipChatEnabled\":true,\"isInvitationsToGroupAllowedURI\":\"https://issues.apache.org/jira/rest/hipchat/integration/latest/groups/default/invitations-allowed\"}";
+WRM._unparsedData["com.atlassian.plugins.jira-html5-attach-images:jira-html5-attach-images-resources.resource-uris"]="{\"deployJava.html\":\"/jira/s/en_UK-6etnyn/6346/236/1.5.20/_/download/resources/com.atlassian.plugins.jira-html5-attach-images:jira-html5-attach-images-resources/deployJava.html\",\"clipboard.jar\":\"/jira/s/en_UK-6etnyn/6346/236/1.5.20/_/download/resources/com.atlassian.plugins.jira-html5-attach-images:jira-html5-attach-images-resources/clipboard.jar\",\"clipboard-legacy.jar\":\"/jira/s/en_UK-6etnyn/6346/236/1.5.20/_/download/resources/com.atlassian.plugins.jira-html5-attach-images:jira-html5-attach-images-resources/clipboard-legacy.jar\"}";
+WRM._unparsedData["com.atlassian.servicedesk:sd-feature-flags.sd-feature-flag-data"]="{\"enabled-feature-keys\":[\"jira.plugin.devstatus.phasetwo.enabled\",\"com.atlassian.jira.config.PDL\",\"jira.frother.reporter.field\",\"jira.plugin.devstatus.phasetwo\",\"com.atlassian.jira.darkfeature.CommonHeader\",\"app-switcher.new\",\"frother.assignee.field\",\"jira.issue.status.lozenge\"],\"sd-feature-flag-states\":{\"sd.agent.signature\":false,\"sd.req.participants.portal\":true,\"sd.test.feature.flag.x\":true,\"sd.confluence.kb.od.oneclick\":true,\"sd.sla.threshold.events\":false,\"sd.admin.permission.migration.complete\":false,\"sd.automation.settings.page\":false,\"sd.shared.portals.kb.like\":true,\"sd.email.platform.integration\":true,\"sd.shared.portals.redo\":true,\"sd.req.participants.email\":true,\"sd.portal.logo.default\":true,\"sd.request.participants.upgrade\":true,\"sd.agent.invite.customers\":true,\"sd.shared.portals.kb.search\":true,\"sd.email.notification.plain.text\":true,\"sd.jira.automation.event\":false,\"sd.experimental.customer.satisfaction\":false,\"com.atlassian.jira.config.CoreFeatures.LICENSE_ROLES_ENABLED\":false,\"sd.experimental.itil.sd.configuration\":false,\"sd.request.participants\":true,\"sd.test.feature.flag.y\":false,\"sd.better.logo.uploader\":true}}";
+WRM._unparsedData["com.atlassian.servicedesk:sd-help-links.help-links"]="{\"troubleshoot.requesttype\":\"http://docs.atlassian.com/servicedesk/docs-023/Troubleshooting+issues+with+request+types\",\"public.signup\":\"http://docs.atlassian.com/servicedesk/docs-023/Configuring+public+signup\",\"troubleshooting.user.management.issues\":\"http://docs.atlassian.com/servicedesk/docs-023/Troubleshooting+issues+with+user+management\",\"admin.notifications.config\":\"http://docs.atlassian.com/servicedesk/docs-023/Configuring+JIRA+Service+Desk+notifications\",\"resolve.permission.scheme.errors\":\"http://docs.atlassian.com/servicedesk/docs-023/Resolving+permission+scheme+errors\",\"default\":\"http://docs.atlassian.com/servicedesk/docs-023/\",\"request.type.error.learn.more\":\"http://docs.atlassian.com/servicedesk/docs-023/Troubleshooting+issues+with+request+types\",\"email.setup\":\"http://docs.atlassian.com/servicedesk/docs-023/Setting+up+the+email+channel\"}";
+WRM._unparsedData["com.atlassian.servicedesk:sd-license-warning-resource.exceeded-data"]="{\"isOndemand\":false,\"isMaxTier\":true}";
+</script>
+<link type="text/css" rel="stylesheet" href="/jira/s/01161aaa0b6d1345dd8fe4e481144d84-CDN/en_UK-6etnyn/6346/236/168/_/download/superbatch/css/batch.css" media="all">
+<!--[if lte IE 9]>
+<link type="text/css" rel="stylesheet" href="/jira/s/d41d8cd98f00b204e9800998ecf8427e-CDN/en_UK-6etnyn/6346/236/168/_/download/superbatch/css/batch.css?conditionalComment=lte+IE+9" media="all">
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="/jira/s/01161aaa0b6d1345dd8fe4e481144d84-CDN/en_UK-6etnyn/6346/236/a2db99380f8e4f60765a7100c878b101/_/download/contextbatch/css/jira.navigator.simple,jira.navigator.advanced,jira.view.issue,atl.general,hipchat-issue-panel,jira.navigator.kickass,jira.general,jira.global/batch.css?user-logged-in=true&amp;hc-enabled=true&amp;jag=true&amp;agile_global_admin_condition=true&amp;jaguser=true" media="all">
+<script type="text/javascript" src="/jira/s/94db0efd5543181d59d1d6b7ee0bea5f-CDN/en_UK-6etnyn/6346/236/168/_/download/superbatch/js/batch.js?locale=en-UK" ></script>
+<script type="text/javascript" src="/jira/s/41c2430f23a4b019e84635c6d7dce7eb-T/en_UK-6etnyn/6346/236/a2db99380f8e4f60765a7100c878b101/_/download/contextbatch/js/jira.navigator.simple,jira.navigator.advanced,jira.view.issue,atl.general,hipchat-issue-panel,jira.navigator.kickass,jira.general,jira.global/batch.js?locale=en-UK&amp;user-logged-in=true&amp;hc-enabled=true&amp;jag=true&amp;agile_global_admin_condition=true&amp;jaguser=true" ></script>
+<script type="text/javascript" src="/jira/s/b3d35c1dc2b0363bd7fb163139425c50-CDN/en_UK-6etnyn/6346/236/2.0.2/_/download/batch/com.atlassian.jira.jira-tzdetect-plugin:tzdetect-lib/com.atlassian.jira.jira-tzdetect-plugin:tzdetect-lib.js?locale=en-UK" ></script>
+<script type="text/javascript" src="/jira/s/d41d8cd98f00b204e9800998ecf8427e-CDN/en_UK-6etnyn/6346/236/1.0/_/download/batch/jira.webresources:calendar-en/jira.webresources:calendar-en.js" ></script>
+<script type="text/javascript" src="/jira/s/b3d35c1dc2b0363bd7fb163139425c50-T/en_UK-6etnyn/6346/236/1.5/_/download/batch/com.atlassian.administration.atlassian-admin-quicksearch-jira:admin-quicksearch-webresources/com.atlassian.administration.atlassian-admin-quicksearch-jira:admin-quicksearch-webresources.js?locale=en-UK" ></script>
+
+<script type="text/javascript" src="/jira/rest/api/1.0/shortcuts/6346/5de4cfad0b331496ed2242aac3df73f0/shortcuts.js?context=issuenavigation&amp;context=issueaction"></script>
+<meta name="stp-license-product-name" content="JIRA"/> <meta name="stp-license-days-to-expiry" content="206"/> <meta name="stp-license-is-admin" content="false"/> <meta name="stp-license-should-keep-banner-hidden" content="true"/>
+
+    
+    
+    
+    <meta name="decorator" content="atl.general">
+    <meta id="isNavigator" name="isNavigator" content="true">
+    <meta name="ajs-is-inline-edit-enabled" content="true">
+    <meta name="ajs-user.search.mode" content="basic">
+    <meta name="ajs-issue-search-help-title" content="Searching for Issues">
+    <meta name="ajs-issue-search-help-url" content="https://docs.atlassian.com/jira/docs-063/Searching+for+Issues">
+    <meta name="ajs-advanced-search-help-title" content="Performing Advanced Searches">
+    <meta name="ajs-advanced-search-help-url" content="https://docs.atlassian.com/jira/docs-063/Advanced+Searching">
+            <meta name="ajs-remote-user-avatar-url" content="https://issues.apache.org/jira/secure/useravatar?avatarId=10452">
+    
+</head>
+<body id="jira" class="aui-layout aui-theme-default ka ajax-issue-search-and-view page-type-navigator navigator-issue-only" data-version="6.3.15">
+<div id="page">
+    <header id="header" role="banner">
+        
+    
+        
+            
+        
+    
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+        
+
+
+
+
+
+<fieldset class="parameters hidden dont-default-focus">
+    <input type="hidden" title="tzdetect.pref.tzid" value="Asia/Hong_Kong" />
+    <input type="hidden" title="tzdetect.pref.tzname" value="(GMT+08:00) Hong Kong" />
+    <input type="hidden" title="tzdetect.pref.janOffset" value="28800000" />
+    <input type="hidden" title="tzdetect.pref.julyOffset" value="28800000" />
+    <input type="hidden" title="tzdetect.pref.nothanks" value="" />
+</fieldset>
+<nav class="aui-header aui-dropdown2-trigger-group" role="navigation"><div class="aui-header-inner"><div class="aui-header-before"><a class="aui-dropdown2-trigger app-switcher-trigger" aria-owns="app-switcher" aria-haspopup="true" tabindex="0"><span class="aui-icon aui-icon-small aui-iconfont-appswitcher">Linked Applications</span></a><div id="app-switcher" class="aui-dropdown2 aui-style-default"><div class="app-switcher-loading">Loading&hellip;</div></div><script>
+            (function (NL) {
+                var initialise = function () {
+                    // For some milestones of AUI, the atlassian soy namespace was renamed to aui. Handle that here by ensuring that window.atlassian is defined.
+                    window.atlassian = window.atlassian || window.aui;
+                    new NL.AppSwitcher({
+                        dropdownContents: '#app-switcher'
+                    });
+                };
+                if (NL.AppSwitcher) {
+                    initialise();
+                } else {
+                    NL.onInit = initialise;
+                }
+            }(window.NL = (window.NL || {})));
+            window.NL.isUserAdmin = false</script></div><div class="aui-header-primary"><h1 id="logo" class="aui-header-logo aui-header-logo-custom"><a href="https://issues.apache.org/jira/secure/MyJiraHome.jspa"><img src="/jira/s/en_UK-6etnyn/6346/236/_/jira-logo-scaled.png" alt="ASF JIRA" /></a></h1><ul class='aui-nav'>
+
+
+
+
+<li><a class="aui-nav-link aui-dropdown2-ajax jira-ajax-menu aui-dropdown2-trigger "href="/jira/secure/Dashboard.jspa" id="home_link"  accessKey="d"  title="View and manage your dashboards"  aria-haspopup="true" aria-owns="home_link-content">Dashboards</a><div id="home_link-content" class="aui-dropdown2 aui-style-default" data-aui-dropdown2-ajax-key="home_link"></div></li><li><a class="aui-nav-link aui-dropdown2-ajax jira-ajax-menu aui-dropdown2-trigger "href="/jira/browse/YARN" id="browse_link"  accessKey="p"  title="View recent projects and browse a list of projects"  aria-haspopup="true" aria-owns="browse_link-content">Projects</a><div id="browse_link-content" class="aui-dropdown2 aui-style-default" data-aui-dropdown2-ajax-key="browse_link"></div></li><li><a class="aui-nav-link aui-dropdown2-ajax jira-ajax-menu aui-dropdown2-trigger "href="/jira/issues/" id="find_link"  accessKey="i"  title="Search for issues and view recent issues"  aria-haspopup="true" aria-owns="find_link-content">Issues</a><div id="find_link-content" class="aui-dropdown2 aui-style-default" data-aui-dropdown2-ajax-key="find_link"></div></li><li><a class="aui-nav-link aui-dropdown2-ajax jira-ajax-menu aui-dropdown2-trigger "href="/jira/servicedesk/customer/portals" id="servicedesk-section"  aria-haspopup="true" aria-owns="servicedesk-section-content">Service Desk</a><div id="servicedesk-section-content" class="aui-dropdown2 aui-style-default" data-aui-dropdown2-ajax-key="servicedesk-section"></div></li><li><a class="aui-nav-link aui-dropdown2-ajax jira-ajax-menu aui-dropdown2-trigger "href="/jira/secure/GreenHopper.jspa" id="greenhopper_menu"  title="Manage your project with JIRA Agile"  aria-haspopup="true" aria-owns="greenhopper_menu-content">Agile</a><div id="greenhopper_menu-content" class="aui-dropdown2 aui-style-default" data-aui-dropdown2-ajax-key="greenhopper_menu"></div></li><li><a class="aui-nav-link  hidden"href="/jira/" id="com.atlassian.servicedesk:recent-request-types" ></a></li>
+<li id="create-menu"><a  id="create_link"  class="aui-button aui-button-primary aui-style create-issue "  title="Create a new issue / bug / feature request / etc" href="/jira/secure/CreateIssue!default.jspa" accesskey="c">Create</a></li></ul></div><div class="aui-header-secondary"><ul class='aui-nav'><li>
+    <form action="/jira/secure/QuickSearch.jspa" method="post" id="quicksearch" class="aui-quicksearch dont-default-focus ajs-dirty-warning-exempt">
+        <input id="quickSearchInput" class="search" type="text" title="Search" placeholder="Search" name="searchString" accessKey="q" />
+        <input type="submit" class="hidden" value="Search">
+    </form>
+</li>
+
+
+
+    <li id="system-help-menu">
+        <a class="aui-nav-link aui-dropdown2-trigger" id="help_menu" aria-haspopup="true" aria-owns="system-help-menu-content" href="https://docs.atlassian.com/jira/docs-063/JIRA+Documentation"  target="$textUtils.htmlEncode($rootHelpMenuItem.params.target)"  title="Help"><span class="aui-icon aui-icon-small aui-iconfont-help">Help</span></a>
+        <div id="system-help-menu-content" class="aui-dropdown2 aui-style-default">
+                            <div class="aui-dropdown2-section">
+                                                                <ul id="jira-help" class="aui-list-truncate">
+                                                            <li>
+                                    <a  id="view_help"   class=""  title="Goto the online documentation for JIRA" href="https://docs.atlassian.com/jira/docs-063/JIRA+Documentation"  target="_blank" >Online Help</a>
+                                </li>
+                                                            <li>
+                                    <a  id="gh_view_help"   class=""  title="Get help online for JIRA Agile" href="http://docs.atlassian.com/agile/docs-067/JIRA+Agile+Documentation"  target="_blank" >JIRA Agile Help</a>
+                                </li>
+                                                            <li>
+                                    <a  id="service-desk-view-help"   class=""  title="Get help online for JIRA Service Desk" href="http://docs.atlassian.com/servicedesk/docs-023/"  target="_blank" >JIRA Service Desk Help</a>
+                                </li>
+                                                            <li>
+                                    <a  id="keyshortscuthelp"   class=""  title="Get more information about JIRA's Keyboard Shortcuts" href="/jira/secure/ViewKeyboardShortcuts!default.jspa"  target="_blank" >Keyboard Shortcuts</a>
+                                </li>
+                                                            <li>
+                                    <a  id="view_about"   class=""  title="Get more information about JIRA" href="/jira/secure/AboutPage.jspa" >About JIRA</a>
+                                </li>
+                                                            <li>
+                                    <a  id="view_credits"   class=""  title="See who did what" href="/jira/secure/JiraCreditsPage!default.jspa"  target="_blank" >JIRA Credits</a>
+                                </li>
+                                                            <li>
+                                    <a  id="whats-new-menu-link"   class=""   href="https://docs.atlassian.com/jira/docs-063/whatsnew/full?od=false&a=false&pa=false" >What’s New</a>
+                                </li>
+                                                    </ul>
+                                    </div>
+                    </div>
+    </li>
+
+
+
+
+
+
+
+
+
+<li id="user-options">
+            <a id="header-details-user-fullname" class="aui-dropdown2-trigger" aria-haspopup="true" aria-owns="user-options-content" data-username="zhenyi" data-displayname="fangzhenyi" href="/jira/secure/ViewProfile.jspa" title="User Profile">
+            <span class="aui-avatar aui-avatar-small">
+                <span class="aui-avatar-inner">
+                    <img src="/jira/secure/useravatar?size=small&avatarId=10452" alt="User Profile"/>
+                </span>
+            </span>
+        </a>
+                <div id="user-options-content" class="aui-dropdown2 aui-style-default">
+                            <div class="aui-dropdown2-section">
+                                                                <ul id="personal" class="aui-list-truncate">
+                                                                                                <li>
+                                        <a  id="view_profile"   class=""  title="View and change your details and preferences" href="/jira/secure/ViewProfile.jspa">Profile</a>
+                                    </li>
+                                                                                    </ul>
+                                    </div>
+                            <div class="aui-dropdown2-section">
+                                            <strong>My JIRA Home</strong>
+                                                                <ul id="set_my_jira_home" class="aui-list-truncate">
+                                                            
+                                                                        <li>
+                                        <a  id="set_my_jira_home_default"  class="aui-dropdown2-radio interactive    " title="Set my JIRA Home to the Dashboard." href="/jira/secure/UpdateMyJiraHome.jspa?target=com.atlassian.jira.jira-my-home-plugin%3Aset_my_jira_home_dashboard&atl_token=A5KQ-2QAV-T4JA-FDED|eb8a3221768de30e2d8cbb612b22d479e2e51c48|lin">Dashboard</a>
+                                    </li>
+                                                                                            
+                                                                        <li>
+                                        <a  id="set_my_jira_home_default"  class="aui-dropdown2-radio interactive    " title="Set my JIRA Home to Service Desk" href="/jira/secure/UpdateMyJiraHome.jspa?target=com.atlassian.servicedesk%3Aset_my_jira_home_dashboard&atl_token=A5KQ-2QAV-T4JA-FDED|eb8a3221768de30e2d8cbb612b22d479e2e51c48|lin">Service Desk</a>
+                                    </li>
+                                                                                            
+                                                                        <li>
+                                        <a  id="greenhopper-my-jira-home-set"  class="aui-dropdown2-radio interactive checked    " title="Set my JIRA Home to Agile." href="/jira/secure/UpdateMyJiraHome.jspa?target=com.pyxis.greenhopper.jira%3Agreenhopper-my-jira-home-set-51&atl_token=A5KQ-2QAV-T4JA-FDED|eb8a3221768de30e2d8cbb612b22d479e2e51c48|lin">Agile</a>
+                                    </li>
+                                                                                            
+                                                                        <li>
+                                        <a  id="set_my_jira_home_issuenav"  class="aui-dropdown2-radio interactive    " title="Set my JIRA Home to the Issue Navigator." href="/jira/secure/UpdateMyJiraHome.jspa?target=com.atlassian.jira.jira-my-home-plugin%3Aset_my_jira_home_issue&atl_token=A5KQ-2QAV-T4JA-FDED|eb8a3221768de30e2d8cbb612b22d479e2e51c48|lin">Issue Navigator</a>
+                                    </li>
+                                                                                    </ul>
+                                    </div>
+                            <div class="aui-dropdown2-section">
+                                                                <ul id="system" class="aui-list-truncate">
+                                                                                                <li>
+                                        <a  id="log_out"   class=""  title="Log out and cancel any automatic login." href="/jira/logout?atl_token=A5KQ-2QAV-T4JA-FDED|eb8a3221768de30e2d8cbb612b22d479e2e51c48|lin">Log Out</a>
+                                    </li>
+                                                                                    </ul>
+                                    </div>
+                    </div>
+    </li>
+</ul></div></div><!-- .aui-header-inner--></nav><!-- .aui-header -->
+    </header>
+    
+
+
+
+    <section id="content" role="main">
+        
+    <div class="navigator-container hidden">
+                                                                                                                                <div class="hidden shortcut-links">
+                                    <a id="edit-issue" class="issueaction-edit-issue" href="/jira/secure/EditIssue!default.jspa?id={0}&returnUrl=/secure/issues"></a>
+                                    <a id="assign-issue" class="issueaction-assign-issue" href="/jira/secure/AssignIssue!default.jspa?id={0}&returnUrl=/secure/issues"></a>
+                                    <a id="assign-to-me" class="issueaction-assign-to-me hide-from-opsbar" href="/jira/secure/AssignIssue.jspa?atl_token=A5KQ-2QAV-T4JA-FDED|eb8a3221768de30e2d8cbb612b22d479e2e51c48|lin&amp;id={0}&amp;assignee=zhenyi&returnUrl=/secure/issues"></a>
+                                    <a id="comment-issue" class="issueaction-comment-issue add-issue-comment" href="/jira/secure/AddComment!default.jspa?id={0}&returnUrl=/secure/issues"></a>
+                                    <a id="greenhopper-rapidboard-operation" class="issueaction-greenhopper-rapidboard-operation js-rapidboard-operation-issue" href="/jira/secure/GHGoToBoard.jspa?issueId={0}&returnUrl=/secure/issues"></a>
+                                    <a id="greenhopper-rank-top-operation" class="issueaction-greenhopper-rank-top-operation" href="/jira/secure/RankTop.jspa?issueId={0}&returnUrl=/secure/issues"></a>
+                                    <a id="greenhopper-rank-bottom-operation" class="issueaction-greenhopper-rank-bottom-operation" href="/jira/secure/RankBottom.jspa?issueId={0}&returnUrl=/secure/issues"></a>
+                                    <a id="log-work" class="issueaction-log-work" href="/jira/secure/CreateWorklog!default.jspa?id={0}&returnUrl=/secure/issues"></a>
+                                    <a id="attach-file" class="issueaction-attach-file" href="/jira/secure/AttachFile!default.jspa?id={0}&returnUrl=/secure/issues"></a>
+                                    <a id="attach-screenshot-html5" class="issueaction-attach-screenshot-html5" href="/jira/secure/ShowAttachScreenshotFormAction!default.jspa?id={0}&returnUrl=/secure/issues"></a>
+                                    <a id="toggle-vote-issue" class="issueaction-vote-issue" href="/jira/secure/VoteOrWatchIssue.jspa?atl_token=A5KQ-2QAV-T4JA-FDED|eb8a3221768de30e2d8cbb612b22d479e2e51c48|lin&amp;id={0}&amp;vote=vote&returnUrl=/secure/issues"></a>
+                                    <a id="toggle-vote-issue" class="issueaction-unvote-issue" href="/jira/secure/VoteOrWatchIssue.jspa?atl_token=A5KQ-2QAV-T4JA-FDED|eb8a3221768de30e2d8cbb612b22d479e2e51c48|lin&amp;id={0}&amp;vote=unvote&returnUrl=/secure/issues"></a>
+                                    <a id="view-voters" class="issueaction-view-voters" href="/jira/secure/ViewVoters!default.jspa?id={0}&returnUrl=/secure/issues"></a>
+                                    <a id="toggle-watch-issue" class="issueaction-watch-issue" href="/jira/secure/VoteOrWatchIssue.jspa?atl_token=A5KQ-2QAV-T4JA-FDED|eb8a3221768de30e2d8cbb612b22d479e2e51c48|lin&amp;id={0}&amp;watch=watch&returnUrl=/secure/issues"></a>
+                                    <a id="toggle-watch-issue" class="issueaction-unwatch-issue" href="/jira/secure/VoteOrWatchIssue.jspa?atl_token=A5KQ-2QAV-T4JA-FDED|eb8a3221768de30e2d8cbb612b22d479e2e51c48|lin&amp;id={0}&amp;watch=unwatch&returnUrl=/secure/issues"></a>
+                                    <a id="manage-watchers" class="issueaction-manage-watchers" href="/jira/secure/ManageWatchers!default.jspa?id={0}&returnUrl=/secure/issues"></a>
+                                    <a id="create-subtask" class="issueaction-create-subtask" href="/jira/secure/CreateSubTaskIssue!default.jspa?parentIssueId={0}&returnUrl=/secure/issues"></a>
+                                    <a id="subtask-to-issue" class="issueaction-subtask-to-issue" href="/jira/secure/ConvertSubTask.jspa?id={0}&returnUrl=/secure/issues"></a>
+                                    <a id="issue-to-subtask" class="issueaction-issue-to-subtask" href="/jira/secure/ConvertIssue.jspa?id={0}&returnUrl=/secure/issues"></a>
+                                    <a id="cta-create-branch" class="devstatus-cta-link" href="#devstatus.cta.createbranch&returnUrl=/secure/issues"></a>
+                                    <a id="move-issue" class="issueaction-move-issue" href="/jira/secure/MoveIssue!default.jspa?id={0}&returnUrl=/secure/issues"></a>
+                                    <a id="move-issue" class="issueaction-move-subtask" href="/jira/secure/MoveSubTaskChooseOperation!default.jspa?id={0}&returnUrl=/secure/issues"></a>
+                                    <a id="link-issue" class="issueaction-link-issue" href="/jira/secure/LinkJiraIssue!default.jspa?id={0}&returnUrl=/secure/issues"></a>
+                                    <a id="clone-issue" class="issueaction-clone-issue" href="/jira/secure/CloneIssueDetails!default.jspa?id={0}&returnUrl=/secure/issues"></a>
+                                    <a id="edit-labels" class="issueaction-edit-labels" href="/jira/secure/EditLabels!default.jspa?id={0}&returnUrl=/secure/issues"></a>
+                                    <a id="delete-issue" class="issueaction-delete-issue" href="/jira/secure/DeleteIssue!default.jspa?id={0}&returnUrl=/secure/issues"></a>
+                            </div>
+        
+        <div id="user-parms" style="display:none;" data-user-parms="{&quot;createSharedObjects&quot;:false,&quot;createIssue&quot;:true}"></div>
+
+        <div class="navigator-sidebar" id="navigator-sidebar">
+                        <div style="width:180px">
+                                    </div>
+        </div>
+        <script type="text/javascript">
+            (function() {
+                var navigatorSidebarElement = jQuery(".navigator-sidebar");
+                if (JIRA.Issues.FilterPanelModel) {
+                    navigatorSidebarElement.toggleClass("collapsed", !JIRA.Issues.FilterPanelModel.prototype.isExpanded())
+                    if (JIRA.Issues.FilterPanelModel.prototype.isExpanded()) {
+                        navigatorSidebarElement.width(JIRA.Issues.FilterPanelModel.prototype.getWidth());
+                    }
+                }
+            })();
+        </script>
+        <div class="navigator-body">
+            <div class="contained-content">
+
+                <header class="saved-search-selector">
+                    <div class="saved-search-operations">
+                        <ul class="operations">
+
+                                                            <li class="pluggable-ops">
+                                    <a id="jira-share-trigger" class="lnk icon-share icon-issuenav-share issuenav-share" title="Share this search by emailing other users" rel="nofollow" href="/jira">
+                                                                                Share
+                                    </a>
+                                </li>
+                                                        <li class="aui-dd-parent"><a href="#" class="header-views header-operations aui-dropdown-trigger aui-dd-link standard icon-export lnk" title="Export this filter in another format" role="button"><span>Export</span></a></li>
+                            <li class="aui-dd-parent"><a href="#" class="header-tools header-operations aui-dropdown-trigger aui-dd-link standard icon-tools" title="Select operations that can be completed" role="button"><span>Tools</span></a></li>
+
+                        </ul>
+                        <div class="hidden operations-view-data">
+                            <fieldset class="hidden parameters">
+                            </fieldset>
+                        </div>
+                    </div>
+                    <span id="throbber-space" class="icon throbber"></span>
+                    <div id="search-header-view">
+                        <h1 class="search-title"></h1>
+                    </div>
+                </header>
+                <form class="navigator-search"></form>
+                <div class="navigator-group">
+                                        <div class="results-panel navigator-item">
+                        <div class="navigator-content"
+                                data-issue-table-model-state=""
+                                data-session-search-state=""
+                                data-selected-issue="{&quot;id&quot;:13073476,&quot;key&quot;:&quot;YARN-6627&quot;}">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="issue-container ">
+                                    <div id="issue-content" class="issue-edit-form">
+                    <header id="stalker" class="issue-header js-stalker">
+                        <div class="issue-header-content"><header class="aui-page-header"><div class="aui-page-header-inner"><div class="aui-page-header-image"><span id="12313722" class="aui-avatar aui-avatar-large aui-avatar-project"><span class="aui-avatar-inner"><img id="project-avatar" alt="Uploaded image for project: &#39;Hadoop YARN&#39;" src="https://issues.apache.org/jira/secure/projectavatar?pid=12313722&amp;avatarId=15135" /></span></span></div><!-- .aui-page-header-image --><div class="aui-page-header-main"><ol class="aui-nav aui-nav-breadcrumbs"><li><a id="project-name-val" href="/jira/browse/YARN">Hadoop YARN</a></li><li><a class="issue-link" data-issue-key="YARN-3368" href="/jira/browse/YARN-3368" id="parent_issue_summary" title="[Umbrella] YARN web UI: Next generation">YARN-3368 [Umbrella] YARN web UI: Next generation</a></li><li><a class="issue-link" data-issue-key="YARN-6627" href="/jira/browse/YARN-6627" id="key-val" rel="13073476">YARN-6627</a></li></ol><h1 id="summary-val">Use deployed webapp folder to launch new YARN UI</h1></div><!-- .aui-page-header-main --><div class="aui-page-header-actions"><div id="issue-header-pager"></div></div><!-- .aui-page-header-actions --></div><!-- .aui-page-header-inner --></header><!-- .aui-page-header --><div class="command-bar"><div class="ops-cont"><div class="ops-menus aui-toolbar"><div class="toolbar-split toolbar-split-left"><ul id="opsbar-comment-issue_container" class="toolbar-group pluggable-ops"><li class="toolbar-item"><a id="comment-issue"title="Comment on this issue"class="toolbar-trigger issueaction-comment-issue add-issue-comment" href="/jira/secure/AddComment!default.jspa?id=13073476"><span class="icon aui-icon aui-icon-small aui-iconfont-comment icon-comment"></span> <span class="trigger-label">Comment</span></a></li></ul><ul id="opsbar-opsbar-operations" class="toolbar-group pluggable-ops"><li class="toolbar-item"><a id="greenhopper-rapidboard-operation"title="View this issue on an Agile board"class="toolbar-trigger issueaction-greenhopper-rapidboard-operation js-rapidboard-operation-issue" href="/jira/secure/GHGoToBoard.jspa?issueId=13073476"><span class="trigger-label">Agile Board</span></a></li><li class="toolbar-item toolbar-dropdown"><div><a href="#"  id="opsbar-operations_more" data-hide-on-scroll=".split-view .issue-container" data-contain-to-window="true" class="toolbar-trigger  js-default-dropdown" ><span class="dropdown-text">More</span><span class="icon drop-menu"></span></a><div class="aui-list hidden"><ul class="aui-list-section aui-first"><li class="aui-list-item"><a  href="/jira/secure/ViewVoters!default.jspa?id=13073476" class="aui-list-item-link issueaction-view-voters"title="View voters for this issue"id="view-voters"><span class="trigger-label">Voters</span></a></li><li class="aui-list-item"><a  href="/jira/secure/VoteOrWatchIssue.jspa?atl_token=A5KQ-2QAV-T4JA-FDED|eb8a3221768de30e2d8cbb612b22d479e2e51c48|lin&amp;id=13073476&amp;watch=watch" class="aui-list-item-link issueaction-watch-issue"title="Start watching this issue"id="toggle-watch-issue"><span class="trigger-label">Watch Issue</span></a></li><li class="aui-list-item"><a  href="/jira/secure/ManageWatchers!default.jspa?id=13073476" class="aui-list-item-link issueaction-manage-watchers"title="Manage the watchers of this issue"id="manage-watchers"><span class="trigger-label">Watchers</span></a></li></ul><ul class="aui-list-section aui-last"><li class="aui-list-item"><a  href="/jira/secure/LinkJiraIssue!default.jspa?id=13073476" class="aui-list-item-link issueaction-link-issue"title="Link this issue to another issue or item"id="link-issue"><span class="trigger-label">Link</span></a></li><li class="aui-list-item"><a  href="/jira/secure/CloneIssueDetails!default.jspa?id=13073476" class="aui-list-item-link issueaction-clone-issue"title="Clone this issue"id="clone-issue"><span class="trigger-label">Clone</span></a></li></ul></div></div></li></ul><ul id="opsbar-opsbar-transitions" class="toolbar-group pluggable-ops"></ul><ul id="opsbar-opsbar-admin" class="toolbar-group pluggable-ops"></ul></div><div class="toolbar-split toolbar-split-right"><ul id="opsbar-jira.issue.tools" class="toolbar-group pluggable-ops"><li class="toolbar-item"><a id="jira-share-trigger"title="Share this issue by emailing other users"class="toolbar-trigger icon-share viewissue-share" href="/jira"><span class="icon icon-share icon-viewissue-share"></span> <span class="trigger-label"></span></a></li><li class="toolbar-item toolbar-dropdown"><div><a href="#"  id="viewissue-export"title="Export this issue in another format" data-hide-on-scroll=".split-view .issue-container" data-contain-to-window="true" class="toolbar-trigger  js-default-dropdown" ><span class="icon icon-export viewissue-export"></span> <span class="dropdown-text">Export</span><span class="icon drop-menu"></span></a><div class="aui-list hidden"><ul class="aui-list-section aui-first aui-last"><li class="aui-list-item"><a  href="/jira/si/jira.issueviews:issue-xml/YARN-6627/YARN-6627.xml" class="aui-list-item-link"id="jira.issueviews:issue-xml"><span class="trigger-label">XML</span></a></li><li class="aui-list-item"><a  href="/jira/si/jira.issueviews:issue-word/YARN-6627/YARN-6627.doc" class="aui-list-item-link"id="jira.issueviews:issue-word"><span class="trigger-label">Word</span></a></li><li class="aui-list-item"><a  href="/jira/si/jira.issueviews:issue-html/YARN-6627/YARN-6627.html" class="aui-list-item-link"id="jira.issueviews:issue-html"><span class="trigger-label">Printable</span></a></li><li class="aui-list-item"><a  href="/jira/si/com.atlassian.jira.plugins.jira-importers-plugin:issue-json/YARN-6627/YARN-6627.json" class="aui-list-item-link"id="com.atlassian.jira.plugins.jira-importers-plugin:issue-json"><span class="trigger-label">JSON</span></a></li></ul></div></div></li></ul></div></div></div></div></div>
+                    </header>
+                    <div class="issue-body-content">
+                        <div class="aui-group issue-body"><div class="aui-item issue-main-column"><div id=details-module class="module toggle-wrap"><div id="details-module_heading" class="mod-header"><ul class="ops"></ul><h2 class="toggle-title">Details</h2></div><div class="mod-content">
+
+
+
+
+<ul id="issuedetails" class="property-list two-cols">
+    <li class="item">
+        <div class="wrap">
+            <strong class="name">Type:</strong>
+            <span id="type-val" class="value">
+                                <img  alt="" height="16" src="/jira/images/icons/issuetypes/subtask_alternate.png" title="Sub-task - The sub-task of the issue" width="16" /> Sub-task
+            </span>
+        </div>
+    </li>
+    <li class="item item-right">
+        <div class="wrap">
+            <strong class="name">Status:</strong>
+            <span id="status-val" class="value">
+                                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Resolved&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;jira-issue-status-tooltip-desc&quot;&gt;A resolution has been taken, and it is awaiting verification by reporter. From here issues are either reopened, or are closed.&lt;/span&gt;">Resolved</span>            </span>
+                    </div>
+    </li>
+            <li class="item">
+            <div class="wrap">
+                <strong class="name">Priority:</strong>
+                <span id="priority-val" class="value">
+                                        <img  alt="" height="16" src="/jira/images/icons/priorities/major.png" title="Major - Major loss of function." width="16" /> Major
+                </span>
+            </div>
+        </li>
+                                <li class="item item-right">
+            <div class="wrap">
+                <strong class="name">Resolution:</strong>
+                <span id="resolution-val" class="value resolved" >
+                                     Fixed
+                                </span>
+            </div>
+        </li>
+                <li class="item">
+            <div class="wrap">
+                <strong class="name">Affects Version/s:</strong>
+                <span id="versions-val" class="value">
+                                            None
+                                    </span>
+            </div>
+        </li>
+                <li class="item item-right">
+            <div class="wrap">
+                <strong class="name">Fix Version/s:</strong>
+                <span id="fixfor-val" class="value">
+                                            <span class="shorten" id="fixVersions-field">
+                                                            <a href="/jira/browse/YARN/fixforversion/12339182" title="3.0.0-alpha3 ">3.0.0-alpha3</a>                                                    </span>
+                                    </span>
+            </div>
+        </li>
+                <li class="item">
+            <div class="wrap">
+                <strong class="name">Component/s:</strong>
+                <span id="components-val" class="value">
+                                            <span class="shorten" id="components-field">
+                                                            <a href="/jira/browse/YARN/component/12330905" title="yarn-ui-v2 ">yarn-ui-v2</a>                                                    </span>
+                                    </span>
+            </div>
+        </li>
+                    <li class="item full-width">
+            <div class="wrap" id="wrap-labels">
+                <strong class="name">Labels:</strong>
+                    <div class="labels-wrap value">
+            <span class="labels" id="labels-13073476-value">None</span>
+                </div>
+            </div>
+        </li>
+        </ul>
+
+<div id="customfieldmodule">
+    <div class="aui-tabs horizontal-tabs" id="customfield-tabs">
+                    <div id="customfield-panel-1" class="tabs-pane active-pane">
+                        <ul class="property-list">
+                                                <li id="rowForcustomfield_12310191" class="item">
+                        <div class="wrap">
+                            <strong title="Hadoop Flags" class="name">Hadoop Flags:</strong>
+                            <div id="customfield_12310191-val" class="value type-multicheckboxes" data-fieldtype="multicheckboxes" data-fieldtypecompletekey="com.atlassian.jira.plugin.system.customfieldtypes:multicheckboxes">
+                                
+
+
+    <div class="shorten" id="customfield_12310191-field">
+        							<span>Reviewed</span>			            </div>
+
+                            </div>
+                        </div>
+                    </li>
+                                        </ul>
+        </div>
+        </div></div>
+</div></div><div id=descriptionmodule class="module toggle-wrap"><div id="descriptionmodule_heading" class="mod-header"><ul class="ops"></ul><h2 class="toggle-title">Description</h2></div><div class="mod-content"><div id="description-val" class="field-ignore-highlight">
+    <div class="user-content-block">
+                    <p>Currently new ui war file is placed in share/hadoop/yarn folder. Along with this, its better to have ui2 folder placed under share/hadoop/yarn/webapps so that UI could be launched from a defined folder.</p>
+
+<p>This will also help to make some cutom config related to ui as well.</p>
+
+<p>cc/<a href="https://issues.apache.org/jira/secure/ViewProfile.jspa?name=jianhe" class="user-hover" rel="jianhe">Jian He</a></p>
+            </div>
+</div>
+</div></div><div id=attachmentmodule class="module toggle-wrap"><div id="attachmentmodule_heading" class="mod-header"><ul class="ops"><li class="drop"><div class="aui-dd-parent"><a href="#" class="icon drop-menu js-default-dropdown" title="Options"><span>Options</span></a><div class="aui-dropdown-content aui-list"><ul id="attachment-sorting-options"class="aui-list-section aui-first"><li class="aui-list-item"><a id="attachment-sort-key-name"href="/jira/browse/YARN-6627?attachmentSortBy=fileName#attachmentmodule"class="aui-list-checked aui-checked aui-list-item-link"title="viewissue.subtasks.tab.show.all.name"><span>Sort By Name</span></a></li><li class="aui-list-item"><a id="attachment-sort-key-date"href="/jira/browse/YARN-6627?attachmentSortBy=dateTime#attachmentmodule"class="aui-list-checked aui-list-item-link"title="Sort By Date"><span>Sort By Date</span></a></li></ul><ul id="attachment-sorting-order-options"class="aui-list-section aui-last"><li class="aui-list-item"><a id="attachment-sort-direction-asc"href="/jira/browse/YARN-6627?attachmentOrder=asc#attachmentmodule"class="aui-list-checked aui-checked aui-list-item-link"title="Ascending"><span>Ascending</span></a></li><li class="aui-list-item"><a id="attachment-sort-direction-desc"href="/jira/browse/YARN-6627?attachmentOrder=desc#attachmentmodule"class="aui-list-checked aui-list-item-link"title="Descending"><span>Descending</span></a></li></ul></div></div></li></ul><h2 class="toggle-title">Attachments</h2></div><div class="mod-content">
+            <ol id="file_attachments" class="item-attachments">
+                            <li class="attachment-content">
+                                            <div class="attachment-thumb">
+                            <a href="/jira/secure/attachment/12868985/YARN-6627.0001.patch" draggable="true" data-downloadurl="${fileAttachment.mimetype}:YARN-6627.0001.patch:https://issues.apache.org/jira/secure/attachment/12868985/YARN-6627.0001.patch">
+                                    <img src="/jira/images/icons/attach/text.gif" height="16" width="16" border="0" alt="Text File">
+                            </a>
+                        </div>
+                        <dl>
+                                <dt class="attachment-title">
+        <a href="/jira/secure/attachment/12868985/YARN-6627.0001.patch"
+            title="Latest  19/May/17 23:41 - Sunil G" draggable="true"
+            data-downloadurl="${attachment.mimetype}:YARN-6627.0001.patch:https://issues.apache.org/jira/secure/attachment/12868985/YARN-6627.0001.patch">YARN-6627.0001.patch
+        </a>
+    </dt>
+    <dd class="attachment-delete">
+                    <span class="icon"></span>
+            </dd>
+    <dd class="attachment-date"><time class="livestamp" datetime="2017-05-19T23:41:07+0800">19/May/17 23:41</time></dd>
+    <dd class="attachment-size">4 kB</dd>
+    <dd class="attachment-author">Sunil G</dd>
+                        </dl>
+                                    </li>
+                            <li class="attachment-content">
+                                            <div class="attachment-thumb">
+                            <a href="/jira/secure/attachment/12869008/YARN-6627.0002.patch" draggable="true" data-downloadurl="${fileAttachment.mimetype}:YARN-6627.0002.patch:https://issues.apache.org/jira/secure/attachment/12869008/YARN-6627.0002.patch">
+                                    <img src="/jira/images/icons/attach/text.gif" height="16" width="16" border="0" alt="Text File">
+                            </a>
+                        </div>
+                        <dl>
+                                <dt class="attachment-title">
+        <a href="/jira/secure/attachment/12869008/YARN-6627.0002.patch"
+            title="Latest  20/May/17 00:53 - Sunil G" draggable="true"
+            data-downloadurl="${attachment.mimetype}:YARN-6627.0002.patch:https://issues.apache.org/jira/secure/attachment/12869008/YARN-6627.0002.patch">YARN-6627.0002.patch
+        </a>
+    </dt>
+    <dd class="attachment-delete">
+                    <span class="icon"></span>
+            </dd>
+    <dd class="attachment-date"><time class="livestamp" datetime="2017-05-20T00:53:49+0800">20/May/17 00:53</time></dd>
+    <dd class="attachment-size">4 kB</dd>
+    <dd class="attachment-author">Sunil G</dd>
+                        </dl>
+                                    </li>
+                            <li class="attachment-content">
+                                            <div class="attachment-thumb">
+                            <a href="/jira/secure/attachment/12869075/YARN-6627.0003.patch" draggable="true" data-downloadurl="${fileAttachment.mimetype}:YARN-6627.0003.patch:https://issues.apache.org/jira/secure/attachment/12869075/YARN-6627.0003.patch">
+                                    <img src="/jira/images/icons/attach/text.gif" height="16" width="16" border="0" alt="Text File">
+                            </a>
+                        </div>
+                        <dl>
+                                <dt class="attachment-title">
+        <a href="/jira/secure/attachment/12869075/YARN-6627.0003.patch"
+            title="Latest  20/May/17 08:06 - Jian He" draggable="true"
+            data-downloadurl="${attachment.mimetype}:YARN-6627.0003.patch:https://issues.apache.org/jira/secure/attachment/12869075/YARN-6627.0003.patch">YARN-6627.0003.patch
+        </a>
+    </dt>
+    <dd class="attachment-delete">
+                    <span class="icon"></span>
+            </dd>
+    <dd class="attachment-date"><time class="livestamp" datetime="2017-05-20T08:06:06+0800">20/May/17 08:06</time></dd>
+    <dd class="attachment-size">4 kB</dd>
+    <dd class="attachment-author">Jian He</dd>
+                        </dl>
+                                    </li>
+                    </ol>
+        </div></div><div id=activitymodule class="module toggle-wrap"><div id="activitymodule_heading" class="mod-header"><ul class="ops"></ul><h2 class="toggle-title">Activity</h2></div><div class="mod-content">
+
+
+
+
+
+
+
+
+
+
+    <div class="tabwrap tabs2">
+
+        <ul id="issue-tabs" class="tabs horizontal">
+                                
+            <li  data-id="all-tabpanel" data-key="com.atlassian.jira.plugin.system.issuetabpanels:all-tabpanel" data-label="All" data-href="/jira/browse/YARN-6627?page=com.atlassian.jira.plugin.system.issuetabpanels:all-tabpanel">
+                            <a class="ajax-activity-content" id="all-tabpanel" href="/jira/browse/YARN-6627?page=com.atlassian.jira.plugin.system.issuetabpanels:all-tabpanel"><strong>All</strong></a>
+                        </li>
+                                
+            <li  class="active" id="comment-tabpanel"  data-id="comment-tabpanel" data-key="com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel" data-label="Comments" data-href="/jira/browse/YARN-6627?page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel">
+                            <strong tabindex="0">Comments</strong>
+                        </li>
+                                
+            <li  data-id="worklog-tabpanel" data-key="com.atlassian.jira.plugin.system.issuetabpanels:worklog-tabpanel" data-label="Work Log" data-href="/jira/browse/YARN-6627?page=com.atlassian.jira.plugin.system.issuetabpanels:worklog-tabpanel">
+                            <a class="ajax-activity-content" id="worklog-tabpanel" href="/jira/browse/YARN-6627?page=com.atlassian.jira.plugin.system.issuetabpanels:worklog-tabpanel"><strong>Work Log</strong></a>
+                        </li>
+                                
+            <li  data-id="changehistory-tabpanel" data-key="com.atlassian.jira.plugin.system.issuetabpanels:changehistory-tabpanel" data-label="History" data-href="/jira/browse/YARN-6627?page=com.atlassian.jira.plugin.system.issuetabpanels:changehistory-tabpanel">
+                            <a class="ajax-activity-content" id="changehistory-tabpanel" href="/jira/browse/YARN-6627?page=com.atlassian.jira.plugin.system.issuetabpanels:changehistory-tabpanel"><strong>History</strong></a>
+                        </li>
+                                
+            <li  data-id="activity-stream-issue-tab" data-key="com.atlassian.streams.streams-jira-plugin:activity-stream-issue-tab" data-label="Activity" data-href="/jira/browse/YARN-6627?page=com.atlassian.streams.streams-jira-plugin:activity-stream-issue-tab">
+                            <a class="ajax-activity-content" id="activity-stream-issue-tab" href="/jira/browse/YARN-6627?page=com.atlassian.streams.streams-jira-plugin:activity-stream-issue-tab"><strong>Activity</strong></a>
+                        </li>
+                                
+            <li  data-id="transitions-summary-tabpanel" data-key="com.googlecode.jira-suite-utilities:transitions-summary-tabpanel" data-label="Transitions" data-href="/jira/browse/YARN-6627?page=com.googlecode.jira-suite-utilities:transitions-summary-tabpanel">
+                            <a class="ajax-activity-content" id="transitions-summary-tabpanel" href="/jira/browse/YARN-6627?page=com.googlecode.jira-suite-utilities:transitions-summary-tabpanel"><strong>Transitions</strong></a>
+                        </li>
+                </ul>
+
+                    <div class="sortwrap">
+                                    <a class="icon icon-sort-down ajax-activity-content" rel="nofollow" href="/jira/browse/YARN-6627?actionOrder=desc" title="Ascending order - Click to sort in descending order"><span>Ascending order - Click to sort in descending order</span></a>
+                            </div>
+            </div>
+    <div class="issuePanelWrapper">
+        <div class="issuePanelProgress"></div>
+        <div class="issuePanelContainer" id="issue_actions_container">
+                                    
+
+
+<div id="comment-16017563" class="issue-data-block activity-comment twixi-block  expanded">
+    <div class="twixi-wrap verbose actionContainer">
+        <div class="action-head">
+            <a href="#" title="Collapse comment" class="twixi"><span class="icon twixi-opened"><span>Hide</span></span></a>
+            <div class="action-links">
+                <a href="/jira/browse/YARN-6627?focusedCommentId=16017563&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-16017563" title="Right click and copy link for a permanent link to this comment." class="icon icon-perma activitymodule-link"><span>Permalink</span></a>
+                                            </div>
+            <div class="action-details">        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="sunilg" id="commentauthor_16017563_verbose" href="/jira/secure/ViewProfile.jspa?name=sunilg"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="/jira/secure/useravatar?size=xsmall&amp;avatarId=10452" alt="sunilg" /></span></span> Sunil G</a>
+ added a comment  - <span class='commentdate_16017563_verbose subText'><span class='date user-tz' title='19/May/17 23:41'><time class='livestamp' datetime='2017-05-19T23:41:07+0800'>19/May/17 23:41</time></span></span>  </div>
+        </div>
+        <div class="action-body flooded"><p>v1 patch</p> </div>
+    </div>
+    <div class="twixi-wrap concise actionContainer">
+        <div class="action-head">
+            <a href="#" title="Expand comment" class="twixi"><span class="icon twixi-closed"><span>Show</span></span></a>
+            <div class="action-details flooded">
+                        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="sunilg" id="commentauthor_16017563_concise" href="/jira/secure/ViewProfile.jspa?name=sunilg"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="/jira/secure/useravatar?size=xsmall&amp;avatarId=10452" alt="sunilg" /></span></span> Sunil G</a>
+ added a comment  - <span class='commentdate_16017563_concise subText'><span class='date user-tz' title='19/May/17 23:41'><time class='livestamp' datetime='2017-05-19T23:41:07+0800'>19/May/17 23:41</time></span></span>                    v1 patch              </div>
+        </div>
+    </div>
+</div>
+                             
+
+
+<div id="comment-16017647" class="issue-data-block activity-comment twixi-block  expanded">
+    <div class="twixi-wrap verbose actionContainer">
+        <div class="action-head">
+            <a href="#" title="Collapse comment" class="twixi"><span class="icon twixi-opened"><span>Hide</span></span></a>
+            <div class="action-links">
+                <a href="/jira/browse/YARN-6627?focusedCommentId=16017647&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-16017647" title="Right click and copy link for a permanent link to this comment." class="icon icon-perma activitymodule-link"><span>Permalink</span></a>
+                                            </div>
+            <div class="action-details">        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="sunilg" id="commentauthor_16017647_verbose" href="/jira/secure/ViewProfile.jspa?name=sunilg"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="/jira/secure/useravatar?size=xsmall&amp;avatarId=10452" alt="sunilg" /></span></span> Sunil G</a>
+ added a comment  - <span class='commentdate_16017647_verbose subText'><span class='date user-tz' title='20/May/17 00:53'><time class='livestamp' datetime='2017-05-20T00:53:50+0800'>20/May/17 00:53</time></span></span>  </div>
+        </div>
+        <div class="action-body flooded"><p>Attaching v2 patch.</p>
+
+<p>hadoop ui war file need not have to be placed in share/hadoop/yarn folder.</p> </div>
+    </div>
+    <div class="twixi-wrap concise actionContainer">
+        <div class="action-head">
+            <a href="#" title="Expand comment" class="twixi"><span class="icon twixi-closed"><span>Show</span></span></a>
+            <div class="action-details flooded">
+                        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="sunilg" id="commentauthor_16017647_concise" href="/jira/secure/ViewProfile.jspa?name=sunilg"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="/jira/secure/useravatar?size=xsmall&amp;avatarId=10452" alt="sunilg" /></span></span> Sunil G</a>
+ added a comment  - <span class='commentdate_16017647_concise subText'><span class='date user-tz' title='20/May/17 00:53'><time class='livestamp' datetime='2017-05-20T00:53:50+0800'>20/May/17 00:53</time></span></span>                    Attaching v2 patch. 
+
+ hadoop ui war file need not have to be placed in share/hadoop/yarn folder.              </div>
+        </div>
+    </div>
+</div>
+                             
+
+
+<div id="comment-16017917" class="issue-data-block activity-comment twixi-block  expanded">
+    <div class="twixi-wrap verbose actionContainer">
+        <div class="action-head">
+            <a href="#" title="Collapse comment" class="twixi"><span class="icon twixi-opened"><span>Hide</span></span></a>
+            <div class="action-links">
+                <a href="/jira/browse/YARN-6627?focusedCommentId=16017917&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-16017917" title="Right click and copy link for a permanent link to this comment." class="icon icon-perma activitymodule-link"><span>Permalink</span></a>
+                                            </div>
+            <div class="action-details">        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="hadoopqa" id="commentauthor_16017917_verbose" href="/jira/secure/ViewProfile.jspa?name=hadoopqa"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="/jira/secure/useravatar?size=xsmall&amp;ownerId=hadoopqa&amp;avatarId=10393" alt="hadoopqa" /></span></span> Hadoop QA</a>
+ added a comment  - <span class='commentdate_16017917_verbose subText'><span class='date user-tz' title='20/May/17 03:45'><time class='livestamp' datetime='2017-05-20T03:45:11+0800'>20/May/17 03:45</time></span></span>  </div>
+        </div>
+        <div class="action-body flooded"><table class='confluenceTable'><tbody>
+<tr>
+<td class='confluenceTd'> <img class="emoticon" src="/jira/images/icons/emoticons/error.gif" height="16" width="16" align="absmiddle" alt="" border="0"/> <b><font color="red">-1 overall</font></b> </td>
+</tr>
+</tbody></table>
+
+<p><br class="atl-forced-newline" />
+<br class="atl-forced-newline" /></p>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Vote </th>
+<th class='confluenceTh'> Subsystem </th>
+<th class='confluenceTh'> Runtime </th>
+<th class='confluenceTh'> Comment </th>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="blue">0</font> </td>
+<td class='confluenceTd'> <font color="blue"> reexec </font> </td>
+<td class='confluenceTd'> <font color="blue">  0m 34s</font> </td>
+<td class='confluenceTd'> <font color="blue"> Docker mode activated. </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="green">+1</font> </td>
+<td class='confluenceTd'> <font color="green"> @author </font> </td>
+<td class='confluenceTd'> <font color="green">  0m  0s</font> </td>
+<td class='confluenceTd'> <font color="green"> The patch does not contain any @author tags. </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="red">-1</font> </td>
+<td class='confluenceTd'> <font color="red"> test4tests </font> </td>
+<td class='confluenceTd'> <font color="red">  0m  0s</font> </td>
+<td class='confluenceTd'> <font color="red"> The patch doesn't appear to include any new or modified tests. Please justify why no new tests are needed for this patch. Also please list what manual steps were performed to verify this patch. </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="blue">0</font> </td>
+<td class='confluenceTd'> <font color="blue"> mvndep </font> </td>
+<td class='confluenceTd'> <font color="blue">  1m 46s</font> </td>
+<td class='confluenceTd'> <font color="blue"> Maven dependency ordering for branch </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="green">+1</font> </td>
+<td class='confluenceTd'> <font color="green"> mvninstall </font> </td>
+<td class='confluenceTd'> <font color="green"> 15m 14s</font> </td>
+<td class='confluenceTd'> <font color="green"> trunk passed </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="green">+1</font> </td>
+<td class='confluenceTd'> <font color="green"> compile </font> </td>
+<td class='confluenceTd'> <font color="green"> 15m  6s</font> </td>
+<td class='confluenceTd'> <font color="green"> trunk passed </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="green">+1</font> </td>
+<td class='confluenceTd'> <font color="green"> checkstyle </font> </td>
+<td class='confluenceTd'> <font color="green">  2m  0s</font> </td>
+<td class='confluenceTd'> <font color="green"> trunk passed </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="green">+1</font> </td>
+<td class='confluenceTd'> <font color="green"> mvnsite </font> </td>
+<td class='confluenceTd'> <font color="green">  1m  5s</font> </td>
+<td class='confluenceTd'> <font color="green"> trunk passed </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="green">+1</font> </td>
+<td class='confluenceTd'> <font color="green"> mvneclipse </font> </td>
+<td class='confluenceTd'> <font color="green">  0m 39s</font> </td>
+<td class='confluenceTd'> <font color="green"> trunk passed </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="blue">0</font> </td>
+<td class='confluenceTd'> <font color="blue"> findbugs </font> </td>
+<td class='confluenceTd'> <font color="blue">  0m  0s</font> </td>
+<td class='confluenceTd'> <font color="blue"> Skipped patched modules with no Java source: hadoop-assemblies </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="green">+1</font> </td>
+<td class='confluenceTd'> <font color="green"> findbugs </font> </td>
+<td class='confluenceTd'> <font color="green">  1m 21s</font> </td>
+<td class='confluenceTd'> <font color="green"> trunk passed </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="green">+1</font> </td>
+<td class='confluenceTd'> <font color="green"> javadoc </font> </td>
+<td class='confluenceTd'> <font color="green">  0m 45s</font> </td>
+<td class='confluenceTd'> <font color="green"> trunk passed </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="blue">0</font> </td>
+<td class='confluenceTd'> <font color="blue"> mvndep </font> </td>
+<td class='confluenceTd'> <font color="blue">  0m 17s</font> </td>
+<td class='confluenceTd'> <font color="blue"> Maven dependency ordering for patch </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="green">+1</font> </td>
+<td class='confluenceTd'> <font color="green"> mvninstall </font> </td>
+<td class='confluenceTd'> <font color="green">  0m 54s</font> </td>
+<td class='confluenceTd'> <font color="green"> the patch passed </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="green">+1</font> </td>
+<td class='confluenceTd'> <font color="green"> compile </font> </td>
+<td class='confluenceTd'> <font color="green"> 14m 16s</font> </td>
+<td class='confluenceTd'> <font color="green"> the patch passed </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="green">+1</font> </td>
+<td class='confluenceTd'> <font color="green"> javac </font> </td>
+<td class='confluenceTd'> <font color="green"> 14m 16s</font> </td>
+<td class='confluenceTd'> <font color="green"> the patch passed </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="orange">-0</font> </td>
+<td class='confluenceTd'> <font color="orange"> checkstyle </font> </td>
+<td class='confluenceTd'> <font color="orange">  2m  1s</font> </td>
+<td class='confluenceTd'> <font color="orange"> root: The patch generated 1 new + 36 unchanged - 0 fixed = 37 total (was 36) </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="green">+1</font> </td>
+<td class='confluenceTd'> <font color="green"> mvnsite </font> </td>
+<td class='confluenceTd'> <font color="green">  1m 11s</font> </td>
+<td class='confluenceTd'> <font color="green"> the patch passed </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="green">+1</font> </td>
+<td class='confluenceTd'> <font color="green"> mvneclipse </font> </td>
+<td class='confluenceTd'> <font color="green">  0m 50s</font> </td>
+<td class='confluenceTd'> <font color="green"> the patch passed </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="green">+1</font> </td>
+<td class='confluenceTd'> <font color="green"> whitespace </font> </td>
+<td class='confluenceTd'> <font color="green">  0m  0s</font> </td>
+<td class='confluenceTd'> <font color="green"> The patch has no whitespace issues. </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="green">+1</font> </td>
+<td class='confluenceTd'> <font color="green"> xml </font> </td>
+<td class='confluenceTd'> <font color="green">  0m  1s</font> </td>
+<td class='confluenceTd'> <font color="green"> The patch has no ill-formed XML file. </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="blue">0</font> </td>
+<td class='confluenceTd'> <font color="blue"> findbugs </font> </td>
+<td class='confluenceTd'> <font color="blue">  0m  0s</font> </td>
+<td class='confluenceTd'> <font color="blue"> Skipped patched modules with no Java source: hadoop-assemblies </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="green">+1</font> </td>
+<td class='confluenceTd'> <font color="green"> findbugs </font> </td>
+<td class='confluenceTd'> <font color="green">  1m 32s</font> </td>
+<td class='confluenceTd'> <font color="green"> the patch passed </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="green">+1</font> </td>
+<td class='confluenceTd'> <font color="green"> javadoc </font> </td>
+<td class='confluenceTd'> <font color="green">  0m 48s</font> </td>
+<td class='confluenceTd'> <font color="green"> the patch passed </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="green">+1</font> </td>
+<td class='confluenceTd'> <font color="green"> unit </font> </td>
+<td class='confluenceTd'> <font color="green">  0m 22s</font> </td>
+<td class='confluenceTd'> <font color="green"> hadoop-assemblies in the patch passed. </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="red">-1</font> </td>
+<td class='confluenceTd'> <font color="red"> unit </font> </td>
+<td class='confluenceTd'> <font color="red"> 44m 42s</font> </td>
+<td class='confluenceTd'> <font color="red"> hadoop-yarn-server-resourcemanager in the patch failed. </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="green">+1</font> </td>
+<td class='confluenceTd'> <font color="green"> asflicense </font> </td>
+<td class='confluenceTd'> <font color="green">  1m 12s</font> </td>
+<td class='confluenceTd'> <font color="green"> The patch does not generate ASF License warnings. </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="black"></font> </td>
+<td class='confluenceTd'> <font color="black"> </font> </td>
+<td class='confluenceTd'> <font color="black">130m 28s</font> </td>
+<td class='confluenceTd'> <font color="black"> </font> </td>
+</tr>
+</tbody></table>
+
+<p><br class="atl-forced-newline" />
+<br class="atl-forced-newline" /></p>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Reason </th>
+<th class='confluenceTh'> Tests </th>
+</tr>
+<tr>
+<td class='confluenceTd'> Failed junit tests </td>
+<td class='confluenceTd'> hadoop.yarn.server.resourcemanager.TestRMRestart </td>
+</tr>
+<tr>
+<td class='confluenceTd'> Timed out junit tests </td>
+<td class='confluenceTd'> org.apache.hadoop.yarn.server.resourcemanager.TestSubmitApplicationWithRMHA </td>
+</tr>
+<tr>
+<td class='confluenceTd'>&nbsp;</td>
+<td class='confluenceTd'> org.apache.hadoop.yarn.server.resourcemanager.TestKillApplicationWithRMHA </td>
+</tr>
+</tbody></table>
+
+<p><br class="atl-forced-newline" />
+<br class="atl-forced-newline" /></p>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Subsystem </th>
+<th class='confluenceTh'> Report/Notes </th>
+</tr>
+<tr>
+<td class='confluenceTd'> Docker </td>
+<td class='confluenceTd'>  Image:yetus/hadoop:14b5c93 </td>
+</tr>
+<tr>
+<td class='confluenceTd'> JIRA Issue </td>
+<td class='confluenceTd'> <a href="https://issues.apache.org/jira/browse/YARN-6627" title="Use deployed webapp folder to launch new YARN UI" class="issue-link" data-issue-key="YARN-6627"><del>YARN-6627</del></a> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> JIRA Patch URL </td>
+<td class='confluenceTd'> <a href="https://issues.apache.org/jira/secure/attachment/12869008/YARN-6627.0002.patch" class="external-link" rel="nofollow">https://issues.apache.org/jira/secure/attachment/12869008/YARN-6627.0002.patch</a> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> Optional Tests </td>
+<td class='confluenceTd'>  asflicense  compile  javac  javadoc  mvninstall  mvnsite  unit  xml  findbugs  checkstyle  </td>
+</tr>
+<tr>
+<td class='confluenceTd'> uname </td>
+<td class='confluenceTd'> Linux 19399d709da2 3.13.0-108-generic #155-Ubuntu SMP Wed Jan 11 16:58:52 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux </td>
+</tr>
+<tr>
+<td class='confluenceTd'> Build tool </td>
+<td class='confluenceTd'> maven </td>
+</tr>
+<tr>
+<td class='confluenceTd'> Personality </td>
+<td class='confluenceTd'> /testptch/hadoop/patchprocess/precommit/personality/provided.sh </td>
+</tr>
+<tr>
+<td class='confluenceTd'> git revision </td>
+<td class='confluenceTd'> trunk / 19482e0 </td>
+</tr>
+<tr>
+<td class='confluenceTd'> Default Java </td>
+<td class='confluenceTd'> 1.8.0_131 </td>
+</tr>
+<tr>
+<td class='confluenceTd'> findbugs </td>
+<td class='confluenceTd'> v3.1.0-RC1 </td>
+</tr>
+<tr>
+<td class='confluenceTd'> checkstyle </td>
+<td class='confluenceTd'> <a href="https://builds.apache.org/job/PreCommit-YARN-Build/15975/artifact/patchprocess/diff-checkstyle-root.txt" class="external-link" rel="nofollow">https://builds.apache.org/job/PreCommit-YARN-Build/15975/artifact/patchprocess/diff-checkstyle-root.txt</a> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> unit </td>
+<td class='confluenceTd'> <a href="https://builds.apache.org/job/PreCommit-YARN-Build/15975/artifact/patchprocess/patch-unit-hadoop-yarn-project_hadoop-yarn_hadoop-yarn-server_hadoop-yarn-server-resourcemanager.txt" class="external-link" rel="nofollow">https://builds.apache.org/job/PreCommit-YARN-Build/15975/artifact/patchprocess/patch-unit-hadoop-yarn-project_hadoop-yarn_hadoop-yarn-server_hadoop-yarn-server-resourcemanager.txt</a> </td>
+</tr>
+<tr>
+<td class='confluenceTd'>  Test Results </td>
+<td class='confluenceTd'> <a href="https://builds.apache.org/job/PreCommit-YARN-Build/15975/testReport/" class="external-link" rel="nofollow">https://builds.apache.org/job/PreCommit-YARN-Build/15975/testReport/</a> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> modules </td>
+<td class='confluenceTd'> C: hadoop-assemblies hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager U: . </td>
+</tr>
+<tr>
+<td class='confluenceTd'> Console output </td>
+<td class='confluenceTd'> <a href="https://builds.apache.org/job/PreCommit-YARN-Build/15975/console" class="external-link" rel="nofollow">https://builds.apache.org/job/PreCommit-YARN-Build/15975/console</a> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> Powered by </td>
+<td class='confluenceTd'> Apache Yetus 0.5.0-SNAPSHOT   <a href="http://yetus.apache.org" class="external-link" rel="nofollow">http://yetus.apache.org</a> </td>
+</tr>
+</tbody></table>
+
+
+
+<p>This message was automatically generated.</p>
+ </div>
+    </div>
+    <div class="twixi-wrap concise actionContainer">
+        <div class="action-head">
+            <a href="#" title="Expand comment" class="twixi"><span class="icon twixi-closed"><span>Show</span></span></a>
+            <div class="action-details flooded">
+                        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="hadoopqa" id="commentauthor_16017917_concise" href="/jira/secure/ViewProfile.jspa?name=hadoopqa"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="/jira/secure/useravatar?size=xsmall&amp;ownerId=hadoopqa&amp;avatarId=10393" alt="hadoopqa" /></span></span> Hadoop QA</a>
+ added a comment  - <span class='commentdate_16017917_concise subText'><span class='date user-tz' title='20/May/17 03:45'><time class='livestamp' datetime='2017-05-20T03:45:11+0800'>20/May/17 03:45</time></span></span>                     
+ 
+      -1 overall    
+ 
+  
+
+  
+  
+  
+ 
+  Vote  
+  Subsystem  
+  Runtime  
+  Comment  
+ 
+ 
+   0   
+    reexec    
+     0m 34s   
+    Docker mode activated.    
+ 
+ 
+   +1   
+    @author    
+     0m  0s   
+    The patch does not contain any @author tags.    
+ 
+ 
+   -1   
+    test4tests    
+     0m  0s   
+    The patch doesn't appear to include any new or modified tests. Please justify why no new tests are needed for this patch. Also please list what manual steps were performed to verify this patch.    
+ 
+ 
+   0   
+    mvndep    
+     1m 46s   
+    Maven dependency ordering for branch    
+ 
+ 
+   +1   
+    mvninstall    
+    15m 14s   
+    trunk passed    
+ 
+ 
+   +1   
+    compile    
+    15m  6s   
+    trunk passed    
+ 
+ 
+   +1   
+    checkstyle    
+     2m  0s   
+    trunk passed    
+ 
+ 
+   +1   
+    mvnsite    
+     1m  5s   
+    trunk passed    
+ 
+ 
+   +1   
+    mvneclipse    
+     0m 39s   
+    trunk passed    
+ 
+ 
+   0   
+    findbugs    
+     0m  0s   
+    Skipped patched modules with no Java source: hadoop-assemblies    
+ 
+ 
+   +1   
+    findbugs    
+     1m 21s   
+    trunk passed    
+ 
+ 
+   +1   
+    javadoc    
+     0m 45s   
+    trunk passed    
+ 
+ 
+   0   
+    mvndep    
+     0m 17s   
+    Maven dependency ordering for patch    
+ 
+ 
+   +1   
+    mvninstall    
+     0m 54s   
+    the patch passed    
+ 
+ 
+   +1   
+    compile    
+    14m 16s   
+    the patch passed    
+ 
+ 
+   +1   
+    javac    
+    14m 16s   
+    the patch passed    
+ 
+ 
+   -0   
+    checkstyle    
+     2m  1s   
+    root: The patch generated 1 new + 36 unchanged - 0 fixed = 37 total (was 36)    
+ 
+ 
+   +1   
+    mvnsite    
+     1m 11s   
+    the patch passed    
+ 
+ 
+   +1   
+    mvneclipse    
+     0m 50s   
+    the patch passed    
+ 
+ 
+   +1   
+    whitespace    
+     0m  0s   
+    The patch has no whitespace issues.    
+ 
+ 
+   +1   
+    xml    
+     0m  1s   
+    The patch has no ill-formed XML file.    
+ 
+ 
+   0   
+    findbugs    
+     0m  0s   
+    Skipped patched modules with no Java source: hadoop-assemblies    
+ 
+ 
+   +1   
+    findbugs    
+     1m 32s   
+    the patch passed    
+ 
+ 
+   +1   
+    javadoc    
+     0m 48s   
+    the patch passed    
+ 
+ 
+   +1   
+    unit    
+     0m 22s   
+    hadoop-assemblies in the patch passed.    
+ 
+ 
+   -1   
+    unit    
+    44m 42s   
+    hadoop-yarn-server-resourcemanager in the patch failed.    
+ 
+ 
+   +1   
+    asflicense    
+     1m 12s   
+    The patch does not generate ASF License warnings.    
+ 
+ 
+      
+       
+   130m 28s   
+       
+ 
+  
+
+  
+  
+  
+ 
+  Reason  
+  Tests  
+ 
+ 
+  Failed junit tests  
+  hadoop.yarn.server.resourcemanager.TestRMRestart  
+ 
+ 
+  Timed out junit tests  
+  org.apache.hadoop.yarn.server.resourcemanager.TestSubmitApplicationWithRMHA  
+ 
+ 
+ &nbsp; 
+  org.apache.hadoop.yarn.server.resourcemanager.TestKillApplicationWithRMHA  
+ 
+  
+
+  
+  
+  
+ 
+  Subsystem  
+  Report/Notes  
+ 
+ 
+  Docker  
+   Image:yetus/hadoop:14b5c93  
+ 
+ 
+  JIRA Issue  
+    YARN-6627    
+ 
+ 
+  JIRA Patch URL  
+   https://issues.apache.org/jira/secure/attachment/12869008/YARN-6627.0002.patch   
+ 
+ 
+  Optional Tests  
+   asflicense  compile  javac  javadoc  mvninstall  mvnsite  unit  xml  findbugs  checkstyle   
+ 
+ 
+  uname  
+  Linux 19399d709da2 3.13.0-108-generic #155-Ubuntu SMP Wed Jan 11 16:58:52 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux  
+ 
+ 
+  Build tool  
+  maven  
+ 
+ 
+  Personality  
+  /testptch/hadoop/patchprocess/precommit/personality/provided.sh  
+ 
+ 
+  git revision  
+  trunk / 19482e0  
+ 
+ 
+  Default Java  
+  1.8.0_131  
+ 
+ 
+  findbugs  
+  v3.1.0-RC1  
+ 
+ 
+  checkstyle  
+   https://builds.apache.org/job/PreCommit-YARN-Build/15975/artifact/patchprocess/diff-checkstyle-root.txt   
+ 
+ 
+  unit  
+   https://builds.apache.org/job/PreCommit-YARN-Build/15975/artifact/patchprocess/patch-unit-hadoop-yarn-project_hadoop-yarn_hadoop-yarn-server_hadoop-yarn-server-resourcemanager.txt   
+ 
+ 
+   Test Results  
+   https://builds.apache.org/job/PreCommit-YARN-Build/15975/testReport/   
+ 
+ 
+  modules  
+  C: hadoop-assemblies hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager U: .  
+ 
+ 
+  Console output  
+   https://builds.apache.org/job/PreCommit-YARN-Build/15975/console   
+ 
+ 
+  Powered by  
+  Apache Yetus 0.5.0-SNAPSHOT    http://yetus.apache.org   
+ 
+  
+
+
+
+ This message was automatically generated. 
+             </div>
+        </div>
+    </div>
+</div>
+                             
+
+
+<div id="comment-16018190" class="issue-data-block activity-comment twixi-block  expanded">
+    <div class="twixi-wrap verbose actionContainer">
+        <div class="action-head">
+            <a href="#" title="Collapse comment" class="twixi"><span class="icon twixi-opened"><span>Hide</span></span></a>
+            <div class="action-links">
+                <a href="/jira/browse/YARN-6627?focusedCommentId=16018190&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-16018190" title="Right click and copy link for a permanent link to this comment." class="icon icon-perma activitymodule-link"><span>Permalink</span></a>
+                                            </div>
+            <div class="action-details">        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="jianhe" id="commentauthor_16018190_verbose" href="/jira/secure/ViewProfile.jspa?name=jianhe"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="/jira/secure/useravatar?size=xsmall&amp;avatarId=10452" alt="jianhe" /></span></span> Jian He</a>
+ added a comment  - <span class='commentdate_16018190_verbose subText'><span class='date user-tz' title='20/May/17 08:07'><time class='livestamp' datetime='2017-05-20T08:07:19+0800'>20/May/17 08:07</time></span></span>  </div>
+        </div>
+        <div class="action-body flooded"><p><a href="https://issues.apache.org/jira/secure/ViewProfile.jspa?name=sunilg" class="user-hover" rel="sunilg">Sunil G</a>, patch looks good overall,<br/>
+some comments about the loggings, it was easier to just edit it directly, so just uploaded the patch with the log changes. please check</p> </div>
+    </div>
+    <div class="twixi-wrap concise actionContainer">
+        <div class="action-head">
+            <a href="#" title="Expand comment" class="twixi"><span class="icon twixi-closed"><span>Show</span></span></a>
+            <div class="action-details flooded">
+                        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="jianhe" id="commentauthor_16018190_concise" href="/jira/secure/ViewProfile.jspa?name=jianhe"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="/jira/secure/useravatar?size=xsmall&amp;avatarId=10452" alt="jianhe" /></span></span> Jian He</a>
+ added a comment  - <span class='commentdate_16018190_concise subText'><span class='date user-tz' title='20/May/17 08:07'><time class='livestamp' datetime='2017-05-20T08:07:19+0800'>20/May/17 08:07</time></span></span>                     Sunil G , patch looks good overall, 
+some comments about the loggings, it was easier to just edit it directly, so just uploaded the patch with the log changes. please check              </div>
+        </div>
+    </div>
+</div>
+                             
+
+
+<div id="comment-16018255" class="issue-data-block activity-comment twixi-block  expanded">
+    <div class="twixi-wrap verbose actionContainer">
+        <div class="action-head">
+            <a href="#" title="Collapse comment" class="twixi"><span class="icon twixi-opened"><span>Hide</span></span></a>
+            <div class="action-links">
+                <a href="/jira/browse/YARN-6627?focusedCommentId=16018255&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-16018255" title="Right click and copy link for a permanent link to this comment." class="icon icon-perma activitymodule-link"><span>Permalink</span></a>
+                                            </div>
+            <div class="action-details">        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="hadoopqa" id="commentauthor_16018255_verbose" href="/jira/secure/ViewProfile.jspa?name=hadoopqa"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="/jira/secure/useravatar?size=xsmall&amp;ownerId=hadoopqa&amp;avatarId=10393" alt="hadoopqa" /></span></span> Hadoop QA</a>
+ added a comment  - <span class='commentdate_16018255_verbose subText'><span class='date user-tz' title='20/May/17 10:30'><time class='livestamp' datetime='2017-05-20T10:30:53+0800'>20/May/17 10:30</time></span></span>  </div>
+        </div>
+        <div class="action-body flooded"><table class='confluenceTable'><tbody>
+<tr>
+<td class='confluenceTd'> <img class="emoticon" src="/jira/images/icons/emoticons/error.gif" height="16" width="16" align="absmiddle" alt="" border="0"/> <b><font color="red">-1 overall</font></b> </td>
+</tr>
+</tbody></table>
+
+<p><br class="atl-forced-newline" />
+<br class="atl-forced-newline" /></p>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Vote </th>
+<th class='confluenceTh'> Subsystem </th>
+<th class='confluenceTh'> Runtime </th>
+<th class='confluenceTh'> Comment </th>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="blue">0</font> </td>
+<td class='confluenceTd'> <font color="blue"> reexec </font> </td>
+<td class='confluenceTd'> <font color="blue">  0m 15s</font> </td>
+<td class='confluenceTd'> <font color="blue"> Docker mode activated. </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="green">+1</font> </td>
+<td class='confluenceTd'> <font color="green"> @author </font> </td>
+<td class='confluenceTd'> <font color="green">  0m  0s</font> </td>
+<td class='confluenceTd'> <font color="green"> The patch does not contain any @author tags. </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="red">-1</font> </td>
+<td class='confluenceTd'> <font color="red"> test4tests </font> </td>
+<td class='confluenceTd'> <font color="red">  0m  0s</font> </td>
+<td class='confluenceTd'> <font color="red"> The patch doesn't appear to include any new or modified tests. Please justify why no new tests are needed for this patch. Also please list what manual steps were performed to verify this patch. </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="blue">0</font> </td>
+<td class='confluenceTd'> <font color="blue"> mvndep </font> </td>
+<td class='confluenceTd'> <font color="blue">  1m 32s</font> </td>
+<td class='confluenceTd'> <font color="blue"> Maven dependency ordering for branch </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="green">+1</font> </td>
+<td class='confluenceTd'> <font color="green"> mvninstall </font> </td>
+<td class='confluenceTd'> <font color="green"> 15m  1s</font> </td>
+<td class='confluenceTd'> <font color="green"> trunk passed </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="green">+1</font> </td>
+<td class='confluenceTd'> <font color="green"> compile </font> </td>
+<td class='confluenceTd'> <font color="green"> 13m 42s</font> </td>
+<td class='confluenceTd'> <font color="green"> trunk passed </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="green">+1</font> </td>
+<td class='confluenceTd'> <font color="green"> checkstyle </font> </td>
+<td class='confluenceTd'> <font color="green">  2m  2s</font> </td>
+<td class='confluenceTd'> <font color="green"> trunk passed </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="green">+1</font> </td>
+<td class='confluenceTd'> <font color="green"> mvnsite </font> </td>
+<td class='confluenceTd'> <font color="green">  1m  2s</font> </td>
+<td class='confluenceTd'> <font color="green"> trunk passed </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="green">+1</font> </td>
+<td class='confluenceTd'> <font color="green"> mvneclipse </font> </td>
+<td class='confluenceTd'> <font color="green">  0m 39s</font> </td>
+<td class='confluenceTd'> <font color="green"> trunk passed </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="blue">0</font> </td>
+<td class='confluenceTd'> <font color="blue"> findbugs </font> </td>
+<td class='confluenceTd'> <font color="blue">  0m  0s</font> </td>
+<td class='confluenceTd'> <font color="blue"> Skipped patched modules with no Java source: hadoop-assemblies </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="green">+1</font> </td>
+<td class='confluenceTd'> <font color="green"> findbugs </font> </td>
+<td class='confluenceTd'> <font color="green">  1m 17s</font> </td>
+<td class='confluenceTd'> <font color="green"> trunk passed </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="green">+1</font> </td>
+<td class='confluenceTd'> <font color="green"> javadoc </font> </td>
+<td class='confluenceTd'> <font color="green">  0m 47s</font> </td>
+<td class='confluenceTd'> <font color="green"> trunk passed </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="blue">0</font> </td>
+<td class='confluenceTd'> <font color="blue"> mvndep </font> </td>
+<td class='confluenceTd'> <font color="blue">  0m 18s</font> </td>
+<td class='confluenceTd'> <font color="blue"> Maven dependency ordering for patch </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="green">+1</font> </td>
+<td class='confluenceTd'> <font color="green"> mvninstall </font> </td>
+<td class='confluenceTd'> <font color="green">  0m 47s</font> </td>
+<td class='confluenceTd'> <font color="green"> the patch passed </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="green">+1</font> </td>
+<td class='confluenceTd'> <font color="green"> compile </font> </td>
+<td class='confluenceTd'> <font color="green"> 13m 54s</font> </td>
+<td class='confluenceTd'> <font color="green"> the patch passed </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="green">+1</font> </td>
+<td class='confluenceTd'> <font color="green"> javac </font> </td>
+<td class='confluenceTd'> <font color="green"> 13m 54s</font> </td>
+<td class='confluenceTd'> <font color="green"> the patch passed </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="orange">-0</font> </td>
+<td class='confluenceTd'> <font color="orange"> checkstyle </font> </td>
+<td class='confluenceTd'> <font color="orange">  1m 57s</font> </td>
+<td class='confluenceTd'> <font color="orange"> root: The patch generated 2 new + 36 unchanged - 0 fixed = 38 total (was 36) </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="green">+1</font> </td>
+<td class='confluenceTd'> <font color="green"> mvnsite </font> </td>
+<td class='confluenceTd'> <font color="green">  1m  6s</font> </td>
+<td class='confluenceTd'> <font color="green"> the patch passed </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="green">+1</font> </td>
+<td class='confluenceTd'> <font color="green"> mvneclipse </font> </td>
+<td class='confluenceTd'> <font color="green">  0m 48s</font> </td>
+<td class='confluenceTd'> <font color="green"> the patch passed </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="green">+1</font> </td>
+<td class='confluenceTd'> <font color="green"> whitespace </font> </td>
+<td class='confluenceTd'> <font color="green">  0m  0s</font> </td>
+<td class='confluenceTd'> <font color="green"> The patch has no whitespace issues. </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="green">+1</font> </td>
+<td class='confluenceTd'> <font color="green"> xml </font> </td>
+<td class='confluenceTd'> <font color="green">  0m  1s</font> </td>
+<td class='confluenceTd'> <font color="green"> The patch has no ill-formed XML file. </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="blue">0</font> </td>
+<td class='confluenceTd'> <font color="blue"> findbugs </font> </td>
+<td class='confluenceTd'> <font color="blue">  0m  0s</font> </td>
+<td class='confluenceTd'> <font color="blue"> Skipped patched modules with no Java source: hadoop-assemblies </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="green">+1</font> </td>
+<td class='confluenceTd'> <font color="green"> findbugs </font> </td>
+<td class='confluenceTd'> <font color="green">  1m 15s</font> </td>
+<td class='confluenceTd'> <font color="green"> the patch passed </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="green">+1</font> </td>
+<td class='confluenceTd'> <font color="green"> javadoc </font> </td>
+<td class='confluenceTd'> <font color="green">  0m 55s</font> </td>
+<td class='confluenceTd'> <font color="green"> the patch passed </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="green">+1</font> </td>
+<td class='confluenceTd'> <font color="green"> unit </font> </td>
+<td class='confluenceTd'> <font color="green">  0m 23s</font> </td>
+<td class='confluenceTd'> <font color="green"> hadoop-assemblies in the patch passed. </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="red">-1</font> </td>
+<td class='confluenceTd'> <font color="red"> unit </font> </td>
+<td class='confluenceTd'> <font color="red"> 38m 39s</font> </td>
+<td class='confluenceTd'> <font color="red"> hadoop-yarn-server-resourcemanager in the patch failed. </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="green">+1</font> </td>
+<td class='confluenceTd'> <font color="green"> asflicense </font> </td>
+<td class='confluenceTd'> <font color="green">  0m 39s</font> </td>
+<td class='confluenceTd'> <font color="green"> The patch does not generate ASF License warnings. </font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="black"></font> </td>
+<td class='confluenceTd'> <font color="black"> </font> </td>
+<td class='confluenceTd'> <font color="black">121m 10s</font> </td>
+<td class='confluenceTd'> <font color="black"> </font> </td>
+</tr>
+</tbody></table>
+
+<p><br class="atl-forced-newline" />
+<br class="atl-forced-newline" /></p>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Reason </th>
+<th class='confluenceTh'> Tests </th>
+</tr>
+<tr>
+<td class='confluenceTd'> Failed junit tests </td>
+<td class='confluenceTd'> hadoop.yarn.server.resourcemanager.TestRMRestart </td>
+</tr>
+</tbody></table>
+
+<p><br class="atl-forced-newline" />
+<br class="atl-forced-newline" /></p>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Subsystem </th>
+<th class='confluenceTh'> Report/Notes </th>
+</tr>
+<tr>
+<td class='confluenceTd'> Docker </td>
+<td class='confluenceTd'>  Image:yetus/hadoop:14b5c93 </td>
+</tr>
+<tr>
+<td class='confluenceTd'> JIRA Issue </td>
+<td class='confluenceTd'> <a href="https://issues.apache.org/jira/browse/YARN-6627" title="Use deployed webapp folder to launch new YARN UI" class="issue-link" data-issue-key="YARN-6627"><del>YARN-6627</del></a> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> JIRA Patch URL </td>
+<td class='confluenceTd'> <a href="https://issues.apache.org/jira/secure/attachment/12869075/YARN-6627.0003.patch" class="external-link" rel="nofollow">https://issues.apache.org/jira/secure/attachment/12869075/YARN-6627.0003.patch</a> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> Optional Tests </td>
+<td class='confluenceTd'>  asflicense  compile  javac  javadoc  mvninstall  mvnsite  unit  xml  findbugs  checkstyle  </td>
+</tr>
+<tr>
+<td class='confluenceTd'> uname </td>
+<td class='confluenceTd'> Linux b3ae0231b173 3.13.0-106-generic #153-Ubuntu SMP Tue Dec 6 15:44:32 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux </td>
+</tr>
+<tr>
+<td class='confluenceTd'> Build tool </td>
+<td class='confluenceTd'> maven </td>
+</tr>
+<tr>
+<td class='confluenceTd'> Personality </td>
+<td class='confluenceTd'> /testptch/hadoop/patchprocess/precommit/personality/provided.sh </td>
+</tr>
+<tr>
+<td class='confluenceTd'> git revision </td>
+<td class='confluenceTd'> trunk / 9855225 </td>
+</tr>
+<tr>
+<td class='confluenceTd'> Default Java </td>
+<td class='confluenceTd'> 1.8.0_131 </td>
+</tr>
+<tr>
+<td class='confluenceTd'> findbugs </td>
+<td class='confluenceTd'> v3.1.0-RC1 </td>
+</tr>
+<tr>
+<td class='confluenceTd'> checkstyle </td>
+<td class='confluenceTd'> <a href="https://builds.apache.org/job/PreCommit-YARN-Build/15986/artifact/patchprocess/diff-checkstyle-root.txt" class="external-link" rel="nofollow">https://builds.apache.org/job/PreCommit-YARN-Build/15986/artifact/patchprocess/diff-checkstyle-root.txt</a> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> unit </td>
+<td class='confluenceTd'> <a href="https://builds.apache.org/job/PreCommit-YARN-Build/15986/artifact/patchprocess/patch-unit-hadoop-yarn-project_hadoop-yarn_hadoop-yarn-server_hadoop-yarn-server-resourcemanager.txt" class="external-link" rel="nofollow">https://builds.apache.org/job/PreCommit-YARN-Build/15986/artifact/patchprocess/patch-unit-hadoop-yarn-project_hadoop-yarn_hadoop-yarn-server_hadoop-yarn-server-resourcemanager.txt</a> </td>
+</tr>
+<tr>
+<td class='confluenceTd'>  Test Results </td>
+<td class='confluenceTd'> <a href="https://builds.apache.org/job/PreCommit-YARN-Build/15986/testReport/" class="external-link" rel="nofollow">https://builds.apache.org/job/PreCommit-YARN-Build/15986/testReport/</a> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> modules </td>
+<td class='confluenceTd'> C: hadoop-assemblies hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager U: . </td>
+</tr>
+<tr>
+<td class='confluenceTd'> Console output </td>
+<td class='confluenceTd'> <a href="https://builds.apache.org/job/PreCommit-YARN-Build/15986/console" class="external-link" rel="nofollow">https://builds.apache.org/job/PreCommit-YARN-Build/15986/console</a> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> Powered by </td>
+<td class='confluenceTd'> Apache Yetus 0.5.0-SNAPSHOT   <a href="http://yetus.apache.org" class="external-link" rel="nofollow">http://yetus.apache.org</a> </td>
+</tr>
+</tbody></table>
+
+
+
+<p>This message was automatically generated.</p>
+ </div>
+    </div>
+    <div class="twixi-wrap concise actionContainer">
+        <div class="action-head">
+            <a href="#" title="Expand comment" class="twixi"><span class="icon twixi-closed"><span>Show</span></span></a>
+            <div class="action-details flooded">
+                        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="hadoopqa" id="commentauthor_16018255_concise" href="/jira/secure/ViewProfile.jspa?name=hadoopqa"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="/jira/secure/useravatar?size=xsmall&amp;ownerId=hadoopqa&amp;avatarId=10393" alt="hadoopqa" /></span></span> Hadoop QA</a>
+ added a comment  - <span class='commentdate_16018255_concise subText'><span class='date user-tz' title='20/May/17 10:30'><time class='livestamp' datetime='2017-05-20T10:30:53+0800'>20/May/17 10:30</time></span></span>                     
+ 
+      -1 overall    
+ 
+  
+
+  
+  
+  
+ 
+  Vote  
+  Subsystem  
+  Runtime  
+  Comment  
+ 
+ 
+   0   
+    reexec    
+     0m 15s   
+    Docker mode activated.    
+ 
+ 
+   +1   
+    @author    
+     0m  0s   
+    The patch does not contain any @author tags.    
+ 
+ 
+   -1   
+    test4tests    
+     0m  0s   
+    The patch doesn't appear to include any new or modified tests. Please justify why no new tests are needed for this patch. Also please list what manual steps were performed to verify this patch.    
+ 
+ 
+   0   
+    mvndep    
+     1m 32s   
+    Maven dependency ordering for branch    
+ 
+ 
+   +1   
+    mvninstall    
+    15m  1s   
+    trunk passed    
+ 
+ 
+   +1   
+    compile    
+    13m 42s   
+    trunk passed    
+ 
+ 
+   +1   
+    checkstyle    
+     2m  2s   
+    trunk passed    
+ 
+ 
+   +1   
+    mvnsite    
+     1m  2s   
+    trunk passed    
+ 
+ 
+   +1   
+    mvneclipse    
+     0m 39s   
+    trunk passed    
+ 
+ 
+   0   
+    findbugs    
+     0m  0s   
+    Skipped patched modules with no Java source: hadoop-assemblies    
+ 
+ 
+   +1   
+    findbugs    
+     1m 17s   
+    trunk passed    
+ 
+ 
+   +1   
+    javadoc    
+     0m 47s   
+    trunk passed    
+ 
+ 
+   0   
+    mvndep    
+     0m 18s   
+    Maven dependency ordering for patch    
+ 
+ 
+   +1   
+    mvninstall    
+     0m 47s   
+    the patch passed    
+ 
+ 
+   +1   
+    compile    
+    13m 54s   
+    the patch passed    
+ 
+ 
+   +1   
+    javac    
+    13m 54s   
+    the patch passed    
+ 
+ 
+   -0   
+    checkstyle    
+     1m 57s   
+    root: The patch generated 2 new + 36 unchanged - 0 fixed = 38 total (was 36)    
+ 
+ 
+   +1   
+    mvnsite    
+     1m  6s   
+    the patch passed    
+ 
+ 
+   +1   
+    mvneclipse    
+     0m 48s   
+    the patch passed    
+ 
+ 
+   +1   
+    whitespace    
+     0m  0s   
+    The patch has no whitespace issues.    
+ 
+ 
+   +1   
+    xml    
+     0m  1s   
+    The patch has no ill-formed XML file.    
+ 
+ 
+   0   
+    findbugs    
+     0m  0s   
+    Skipped patched modules with no Java source: hadoop-assemblies    
+ 
+ 
+   +1   
+    findbugs    
+     1m 15s   
+    the patch passed    
+ 
+ 
+   +1   
+    javadoc    
+     0m 55s   
+    the patch passed    
+ 
+ 
+   +1   
+    unit    
+     0m 23s   
+    hadoop-assemblies in the patch passed.    
+ 
+ 
+   -1   
+    unit    
+    38m 39s   
+    hadoop-yarn-server-resourcemanager in the patch failed.    
+ 
+ 
+   +1   
+    asflicense    
+     0m 39s   
+    The patch does not generate ASF License warnings.    
+ 
+ 
+      
+       
+   121m 10s   
+       
+ 
+  
+
+  
+  
+  
+ 
+  Reason  
+  Tests  
+ 
+ 
+  Failed junit tests  
+  hadoop.yarn.server.resourcemanager.TestRMRestart  
+ 
+  
+
+  
+  
+  
+ 
+  Subsystem  
+  Report/Notes  
+ 
+ 
+  Docker  
+   Image:yetus/hadoop:14b5c93  
+ 
+ 
+  JIRA Issue  
+    YARN-6627    
+ 
+ 
+  JIRA Patch URL  
+   https://issues.apache.org/jira/secure/attachment/12869075/YARN-6627.0003.patch   
+ 
+ 
+  Optional Tests  
+   asflicense  compile  javac  javadoc  mvninstall  mvnsite  unit  xml  findbugs  checkstyle   
+ 
+ 
+  uname  
+  Linux b3ae0231b173 3.13.0-106-generic #153-Ubuntu SMP Tue Dec 6 15:44:32 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux  
+ 
+ 
+  Build tool  
+  maven  
+ 
+ 
+  Personality  
+  /testptch/hadoop/patchprocess/precommit/personality/provided.sh  
+ 
+ 
+  git revision  
+  trunk / 9855225  
+ 
+ 
+  Default Java  
+  1.8.0_131  
+ 
+ 
+  findbugs  
+  v3.1.0-RC1  
+ 
+ 
+  checkstyle  
+   https://builds.apache.org/job/PreCommit-YARN-Build/15986/artifact/patchprocess/diff-checkstyle-root.txt   
+ 
+ 
+  unit  
+   https://builds.apache.org/job/PreCommit-YARN-Build/15986/artifact/patchprocess/patch-unit-hadoop-yarn-project_hadoop-yarn_hadoop-yarn-server_hadoop-yarn-server-resourcemanager.txt   
+ 
+ 
+   Test Results  
+   https://builds.apache.org/job/PreCommit-YARN-Build/15986/testReport/   
+ 
+ 
+  modules  
+  C: hadoop-assemblies hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager U: .  
+ 
+ 
+  Console output  
+   https://builds.apache.org/job/PreCommit-YARN-Build/15986/console   
+ 
+ 
+  Powered by  
+  Apache Yetus 0.5.0-SNAPSHOT    http://yetus.apache.org   
+ 
+  
+
+
+
+ This message was automatically generated. 
+             </div>
+        </div>
+    </div>
+</div>
+                             
+
+
+<div id="comment-16018283" class="issue-data-block activity-comment twixi-block  expanded">
+    <div class="twixi-wrap verbose actionContainer">
+        <div class="action-head">
+            <a href="#" title="Collapse comment" class="twixi"><span class="icon twixi-opened"><span>Hide</span></span></a>
+            <div class="action-links">
+                <a href="/jira/browse/YARN-6627?focusedCommentId=16018283&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-16018283" title="Right click and copy link for a permanent link to this comment." class="icon icon-perma activitymodule-link"><span>Permalink</span></a>
+                                            </div>
+            <div class="action-details">        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="sunilg" id="commentauthor_16018283_verbose" href="/jira/secure/ViewProfile.jspa?name=sunilg"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="/jira/secure/useravatar?size=xsmall&amp;avatarId=10452" alt="sunilg" /></span></span> Sunil G</a>
+ added a comment  - <span class='commentdate_16018283_verbose subText'><span class='date user-tz' title='20/May/17 11:06'><time class='livestamp' datetime='2017-05-20T11:06:30+0800'>20/May/17 11:06</time></span></span>  </div>
+        </div>
+        <div class="action-body flooded"><p>Thanks <a href="https://issues.apache.org/jira/secure/ViewProfile.jspa?name=jianhe" class="user-hover" rel="jianhe">Jian He</a>.</p>
+
+<p>Test case failures are not related. <a href="https://issues.apache.org/jira/secure/ViewProfile.jspa?name=jianhe" class="user-hover" rel="jianhe">Jian He</a> changes are fine. Please help to commit if its fine.</p> </div>
+    </div>
+    <div class="twixi-wrap concise actionContainer">
+        <div class="action-head">
+            <a href="#" title="Expand comment" class="twixi"><span class="icon twixi-closed"><span>Show</span></span></a>
+            <div class="action-details flooded">
+                        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="sunilg" id="commentauthor_16018283_concise" href="/jira/secure/ViewProfile.jspa?name=sunilg"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="/jira/secure/useravatar?size=xsmall&amp;avatarId=10452" alt="sunilg" /></span></span> Sunil G</a>
+ added a comment  - <span class='commentdate_16018283_concise subText'><span class='date user-tz' title='20/May/17 11:06'><time class='livestamp' datetime='2017-05-20T11:06:30+0800'>20/May/17 11:06</time></span></span>                    Thanks  Jian He . 
+
+ Test case failures are not related.  Jian He  changes are fine. Please help to commit if its fine.              </div>
+        </div>
+    </div>
+</div>
+                             
+
+
+<div id="comment-16018294" class="issue-data-block activity-comment twixi-block  expanded">
+    <div class="twixi-wrap verbose actionContainer">
+        <div class="action-head">
+            <a href="#" title="Collapse comment" class="twixi"><span class="icon twixi-opened"><span>Hide</span></span></a>
+            <div class="action-links">
+                <a href="/jira/browse/YARN-6627?focusedCommentId=16018294&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-16018294" title="Right click and copy link for a permanent link to this comment." class="icon icon-perma activitymodule-link"><span>Permalink</span></a>
+                                            </div>
+            <div class="action-details">        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="hudson" id="commentauthor_16018294_verbose" href="/jira/secure/ViewProfile.jspa?name=hudson"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="/jira/secure/useravatar?size=xsmall&amp;avatarId=10452" alt="hudson" /></span></span> Hudson</a>
+ added a comment  - <span class='commentdate_16018294_verbose subText'><span class='date user-tz' title='20/May/17 11:36'><time class='livestamp' datetime='2017-05-20T11:36:55+0800'>20/May/17 11:36</time></span></span>  </div>
+        </div>
+        <div class="action-body flooded"><p>SUCCESS: Integrated in Jenkins build Hadoop-trunk-Commit #11760 (See <a href="https://builds.apache.org/job/Hadoop-trunk-Commit/11760/" class="external-link" rel="nofollow">https://builds.apache.org/job/Hadoop-trunk-Commit/11760/</a>)<br/>
+<a href="https://issues.apache.org/jira/browse/YARN-6627" title="Use deployed webapp folder to launch new YARN UI" class="issue-link" data-issue-key="YARN-6627"><del>YARN-6627</del></a>. Use deployed webapp folder to launch new YARN UI. Contributed (jianhe: rev e135c0b20794705dabf86a296d934eb8df02a774)</p>
+<ul>
+	<li>(edit) hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/ResourceManager.java</li>
+	<li>(edit) hadoop-assemblies/src/main/resources/assemblies/hadoop-yarn-dist.xml</li>
+</ul>
+ </div>
+    </div>
+    <div class="twixi-wrap concise actionContainer">
+        <div class="action-head">
+            <a href="#" title="Expand comment" class="twixi"><span class="icon twixi-closed"><span>Show</span></span></a>
+            <div class="action-details flooded">
+                        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="hudson" id="commentauthor_16018294_concise" href="/jira/secure/ViewProfile.jspa?name=hudson"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="/jira/secure/useravatar?size=xsmall&amp;avatarId=10452" alt="hudson" /></span></span> Hudson</a>
+ added a comment  - <span class='commentdate_16018294_concise subText'><span class='date user-tz' title='20/May/17 11:36'><time class='livestamp' datetime='2017-05-20T11:36:55+0800'>20/May/17 11:36</time></span></span>                    SUCCESS: Integrated in Jenkins build Hadoop-trunk-Commit #11760 (See  https://builds.apache.org/job/Hadoop-trunk-Commit/11760/ ) 
+  YARN-6627  . Use deployed webapp folder to launch new YARN UI. Contributed (jianhe: rev e135c0b20794705dabf86a296d934eb8df02a774) 
+ 
+	 (edit) hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/ResourceManager.java 
+	 (edit) hadoop-assemblies/src/main/resources/assemblies/hadoop-yarn-dist.xml 
+ 
+             </div>
+        </div>
+    </div>
+</div>
+                             
+
+
+<div id="comment-16020926" class="issue-data-block activity-comment twixi-block  expanded">
+    <div class="twixi-wrap verbose actionContainer">
+        <div class="action-head">
+            <a href="#" title="Collapse comment" class="twixi"><span class="icon twixi-opened"><span>Hide</span></span></a>
+            <div class="action-links">
+                <a href="/jira/browse/YARN-6627?focusedCommentId=16020926&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-16020926" title="Right click and copy link for a permanent link to this comment." class="icon icon-perma activitymodule-link"><span>Permalink</span></a>
+                                            </div>
+            <div class="action-details">        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="sunilg" id="commentauthor_16020926_verbose" href="/jira/secure/ViewProfile.jspa?name=sunilg"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="/jira/secure/useravatar?size=xsmall&amp;avatarId=10452" alt="sunilg" /></span></span> Sunil G</a>
+ added a comment  - <span class='commentdate_16020926_verbose subText'><span class='date user-tz' title='23/May/17 17:13'><time class='livestamp' datetime='2017-05-23T17:13:17+0800'>23/May/17 17:13</time></span></span>  </div>
+        </div>
+        <div class="action-body flooded"><p>Patch is committed to trunk. Closing ticket as well.</p> </div>
+    </div>
+    <div class="twixi-wrap concise actionContainer">
+        <div class="action-head">
+            <a href="#" title="Expand comment" class="twixi"><span class="icon twixi-closed"><span>Show</span></span></a>
+            <div class="action-details flooded">
+                        
+    
+    
+    
+                
+
+    <a class="user-hover user-avatar" rel="sunilg" id="commentauthor_16020926_concise" href="/jira/secure/ViewProfile.jspa?name=sunilg"><span class="aui-avatar aui-avatar-xsmall"><span class="aui-avatar-inner"><img src="/jira/secure/useravatar?size=xsmall&amp;avatarId=10452" alt="sunilg" /></span></span> Sunil G</a>
+ added a comment  - <span class='commentdate_16020926_concise subText'><span class='date user-tz' title='23/May/17 17:13'><time class='livestamp' datetime='2017-05-23T17:13:17+0800'>23/May/17 17:13</time></span></span>                    Patch is committed to trunk. Closing ticket as well.              </div>
+        </div>
+    </div>
+</div>
+                             </div>
+    </div>
+</div></div><div id="addcomment" class="module">
+    <div id="addcomment" class="module">
+    <div class="mod-content">
+        <form action="/jira/secure/AddComment.jspa?atl_token=A5KQ-2QAV-T4JA-FDED%7Ceb8a3221768de30e2d8cbb612b22d479e2e51c48%7Clin" class="aui top-label ajs-dirty-warning-exempt" id="issue-comment-add" method="post">
+            <div class="form-body">
+                <div class="hidden">
+                    <input name="atl_token" type="hidden" value="A5KQ-2QAV-T4JA-FDED|eb8a3221768de30e2d8cbb612b22d479e2e51c48|lin">
+                    <input name="id" type="hidden" value="13073476">
+                </div>
+
+                
+
+
+    
+            
+                
+    
+    
+                            <div class="field-group aui-field-wikiedit comment-input" >
+                                                                        <label for="comment">Comment</label>
+                
+<div class="wiki-edit">
+    <div id="comment-wiki-edit" class="wiki-edit-content">
+                                 <textarea  class="textarea long-field wiki-textfield mentionable" cols="60" id="comment"  name="comment" rows="10" wrap="virtual" data-projectkey="YARN" data-issuekey="YARN-6627"></textarea>
+                <div class="content-inner">            
+        </div>
+    </div>
+</div>
+<div class="field-tools">
+    <dl id="wiki-prefs" class="wiki-js-prefs" style="display:none">
+        <dt>trigger</dt>
+        <dd>comment-preview_link</dd>
+        <dt>fieldId</dt>
+        <dd>comment</dd>
+        <dt>fieldName</dt>
+        <dd>Comment</dd>
+        <dt>rendererType</dt>
+        <dd>atlassian-wiki-renderer</dd>
+        <dt>issueKey</dt>
+        <dd>YARN-6627</dd>
+    </dl>
+    <button class="jira-icon-button fullscreen" id="comment-preview_link" type="button"><span class="aui-icon wiki-renderer-icon">Preview comment</span></button>
+    <a class="help-lnk" id="viewHelp" href="/jira/secure/WikiRendererHelpAction.jspa?section=texteffects" title="Get local help about wiki markup help" data-helplink="local"><span class="aui-icon aui-icon-small aui-iconfont-help"></span></a>
+</div>
+
+                                                <div class="security-level">
+        <fieldset class="hidden parameters">
+            <input type="hidden" title="securityLevelViewableByAll" value="Viewable by All Users">
+            <input type="hidden" title="securityLevelViewableRestrictedTo" value="Restricted to <span class='redText'>{0}</span>">
+        </fieldset>
+        <a class="drop" href="#"><span class="icon  icon-unlocked">This comment will be Viewable by All Users</span><span class="icon drop-menu"></span></a>
+        <select name="commentLevel" id="commentLevel">
+            <option value="">All Users</option>
+                                        <optgroup label="Groups">
+                                            <option value="group:jira-users" >jira-users</option>
+                                    </optgroup>
+                    </select>
+        <span class="current-level">Viewable by All Users</span>
+    </div>
+                                    </div>
+    
+            </div>
+            <div class="buttons-container form-footer">
+                <div class="buttons">
+                    <input accesskey="s" class="aui-button" id="issue-comment-add-submit" name="Add" title="Press Ctrl+Alt+s to submit this form" type="submit" value="Add">
+                    <a accesskey="`" class="aui-button aui-button-link cancel" href="#" id="issue-comment-add-cancel" title="Press Ctrl+Alt+` to cancel">Cancel</a>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="mod-footer">
+        <ul class="ops">
+            <li>
+                <a href="/jira/secure/AddComment!default.jspa?id=13073476" id="footer-comment-button" name="add-comment" class="aui-button">
+                    <span class="aui-icon aui-icon-small aui-iconfont-comment icon-comment"></span>
+                    <span>Comment</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+</div>
+</div><div id="viewissuesidebar" class="aui-item issue-side-column"><div id=peoplemodule class="module toggle-wrap"><div id="peoplemodule_heading" class="mod-header"><ul class="ops"></ul><h2 class="toggle-title">People</h2></div><div class="mod-content"><ul class="item-details" id="peopledetails">
+    <li class="people-details">
+                <dl>
+            <dt>Assignee:</dt>
+            <dd>
+                <span id="assignee-val" class="view-issue-field">
+
+            <span class="user-hover" id="issue_summary_assignee_sunilg" rel="sunilg">
+            <span class="aui-avatar aui-avatar-small"><span class="aui-avatar-inner"><img src="/jira/secure/useravatar?size=small&amp;avatarId=10452" alt="sunilg" /></span></span>
+            Sunil G
+        </span>
+    </span>
+                            </dd>
+        </dl>
+                        <dl>
+            <dt>Reporter:</dt>
+            <dd>
+                <span id="reporter-val" class="view-issue-field">
+
+            <span class="user-hover" id="issue_summary_reporter_sunilg" rel="sunilg">
+            <span class="aui-avatar aui-avatar-small"><span class="aui-avatar-inner"><img src="/jira/secure/useravatar?size=small&amp;avatarId=10452" alt="sunilg" /></span></span>
+            Sunil G
+        </span>
+    </span>
+            </dd>
+        </dl>
+                    </li>
+</ul>
+    <ul class="item-details">
+        <li>
+                            <dl>
+                    <dt>Votes:</dt>
+                    <dd>
+                                                                            <a id="view-voter-list" href="/jira/secure/ViewVoters!default.jspa?id=13073476" title="View Voters">
+                                                    <span id="vote-data" class="aui-badge vote-state-off">0</span>
+                                                    </a>
+                        
+                                                                                                            <span id="vote-label" title="You cannot vote or change your vote on resolved issues.">Vote for this issue</span>
+                                                                        </dd>
+                </dl>
+                                        <dl>
+                    <dt>Watchers:</dt>
+                    <dd>
+                                                                        
+                                                                            <a id="view-watcher-list" href="/jira/secure/ManageWatchers!default.jspa?id=13073476" title="View Watchers">
+                                                    <span id="watcher-data" class="aui-badge watch-state-off">6</span>
+                                                    </a>
+                        
+                                                                                    <a id="watching-toggle" class="watch-state-off" href="/jira/secure/VoteOrWatchIssue.jspa?atl_token=A5KQ-2QAV-T4JA-FDED|eb8a3221768de30e2d8cbb612b22d479e2e51c48|lin&id=13073476&watch=watch" rel="13073476">Start watching this issue</a> <span class="icon"></span>
+                                                                        </dd>
+                </dl>
+                    </li>
+    </ul>
+</div></div><div id=datesmodule class="module toggle-wrap"><div id="datesmodule_heading" class="mod-header"><ul class="ops"></ul><h2 class="toggle-title">Dates</h2></div><div class="mod-content"><ul class="item-details">
+    <li>
+            <dl class="dates">
+            <dt>Created:</dt>
+            <dd class="date user-tz"  title="19/May/17 23:40" >
+
+                <span data-name="Created" id="create-date"  data-fieldtype="datetime"  >
+                                                                        <time class="livestamp" datetime="2017-05-19T23:40:14+0800">19/May/17 23:40</time>                                                             </span>
+            </dd>
+        </dl>
+            <dl class="dates">
+            <dt>Updated:</dt>
+            <dd class="date user-tz"  title="23/May/17 17:13" >
+
+                <span data-name="Updated" id="updated-date"  data-fieldtype="datetime"  >
+                                                                        <time class="livestamp" datetime="2017-05-23T17:13:17+0800">Tuesday 17:13</time>                                                             </span>
+            </dd>
+        </dl>
+            <dl class="dates">
+            <dt>Resolved:</dt>
+            <dd class="date user-tz"  title="23/May/17 17:13" >
+
+                <span data-name="Resolved" id="resolved-date"  data-fieldtype="datetime"  >
+                                                                        <time class="livestamp" datetime="2017-05-23T17:13:17+0800">Tuesday 17:13</time>                                                             </span>
+            </dd>
+        </dl>
+        </li>
+</ul>
+</div></div><div id=viewissue-devstatus-panel class="module toggle-wrap"><div id="viewissue-devstatus-panel_heading" class="mod-header"><ul class="ops"></ul><h2 class="toggle-title">Development</h2></div><div class="mod-content"><ul id="devstatus-container" class="item-details dev-status-container" data-labs-json="{&quot;allowed&quot;:false,&quot;optedIn&quot;:true,&quot;optedInByAdmin&quot;:true,&quot;dismissed&quot;:false,&quot;id&quot;:1}" data-show-contact-admin-form="false" data-issue-type="Sub-task" data-issue-status="Resolved" data-is-assignable="false" data-is-assignee="false" data-ait-help-url-json="{&quot;url&quot;:&quot;https://docs.atlassian.com/jira/docs-063/Advanced+workflow+configuration&quot;,&quot;alt&quot;:&quot;Get help!&quot;,&quot;key&quot;:&quot;workflow.auto.triggers&quot;,&quot;local&quot;:false,&quot;title&quot;:&quot;Advanced workflow configuration&quot;}" ><div class="hidden dev-summary json-blob" data-json="{&quot;cachedValue&quot;:{&quot;errors&quot;:[],&quot;configErrors&quot;:[],&quot;summary&quot;:{&quot;pullrequest&quot;:{&quot;overall&quot;:{&quot;count&quot;:0,&quot;lastUpdated&quot;:null,&quot;stateCount&quot;:0,&quot;state&quot;:&quot;OPEN&quot;},&quot;byInstanceType&quot;:{}},&quot;build&quot;:{&quot;overall&quot;:{&quot;count&quot;:0,&quot;lastUpdated&quot;:null,&quot;failedBuildCount&quot;:0,&quot;successfulBuildCount&quot;:0,&quot;unknownBuildCount&quot;:0},&quot;byInstanceType&quot;:{}},&quot;review&quot;:{&quot;overall&quot;:{&quot;count&quot;:0,&quot;lastUpdated&quot;:null,&quot;stateCount&quot;:0,&quot;state&quot;:null,&quot;dueDate&quot;:null,&quot;overDue&quot;:false},&quot;byInstanceType&quot;:{}},&quot;deployment-environment&quot;:{&quot;overall&quot;:{&quot;count&quot;:0,&quot;lastUpdated&quot;:null,&quot;topEnvironments&quot;:[],&quot;showProjects&quot;:false,&quot;successfulCount&quot;:0},&quot;byInstanceType&quot;:{}},&quot;repository&quot;:{&quot;overall&quot;:{&quot;count&quot;:2,&quot;lastUpdated&quot;:&quot;2017-05-20T11:12:06.000+0800&quot;},&quot;byInstanceType&quot;:{&quot;fecru&quot;:{&quot;count&quot;:2,&quot;name&quot;:&quot;FishEye / Crucible&quot;}}},&quot;branch&quot;:{&quot;overall&quot;:{&quot;count&quot;:0,&quot;lastUpdated&quot;:null},&quot;byInstanceType&quot;:{}}}},&quot;isStale&quot;:false}"></div><ul class="item-details status-panels devstatus-entry"><li class="status-panel hidden" id="branch-status-panel" data-module="BranchModule"></li><li class="status-panel hidden" id="commit-status-panel" data-module="CommitModule"></li><li class="status-panel hidden" id="pullrequest-status-panel" data-module="PullRequestModule"></li><li class="status-panel hidden" id="review-status-panel" data-module="ReviewModule"></li><li class="status-panel hidden" id="build-status-panel" data-module="BuildModule" data-issue-type="Sub-task" data-issue-status="Resolved" data-is-assignee="false"></li><li class="status-panel deployment-summary hidden" id="deployment-status-panel" data-module="DeploymentModule" data-issue-type="Sub-task" data-issue-status="Resolved" data-is-assignee="false"></li></ul><li class="call-to-actions devstatus-entry hidden"></li><li class="message-panel hidden"></li><li class="labs-on-off-container hidden"></li></ul></div></div><div id=greenhopper-agile-issue-web-panel class="module toggle-wrap"><div id="greenhopper-agile-issue-web-panel_heading" class="mod-header"><ul class="ops"></ul><h2 class="toggle-title">Agile</h2></div><div class="mod-content">
+
+<ul class="item-details ghx-separated">
+    <li>
+        <a class="issueaction-greenhopper-rapidboard-operation js-rapidboard-operation-issue"
+           href="/jira/secure/GHGoToBoard.jspa?issueId=13073476"
+           title="View this issue on an Agile board">
+            View on Board
+        </a>
+    </li>
+</ul>
+</div></div><div id=hipchat-viewissue-panel class="module toggle-wrap"><div id="hipchat-viewissue-panel_heading" class="mod-header"><ul class="ops"></ul><h2 class="toggle-title">HipChat discussions</h2></div><div class="mod-content"><div id="hipchat-issue-panel-spinner"></div><div id="hipchat-issue-panel" class="hipchat-issue-panel"><div id="hipchat-issue-panel-errors" class="errors"></div></div></div></div><div id=bamboo-deployment-projects-right class="module toggle-wrap"><div id="bamboo-deployment-projects-right_heading" class="mod-header"><ul class="ops"></ul><h2 class="toggle-title">Issue deployment</h2></div><div class="mod-content"><div id='issue-deployments-panel-content'></div>
+<script>
+    (function ($, JBAM_DEPLOYMENT){
+        if (!JBAM_DEPLOYMENT) {
+            return; // Don't bother rendering, since the resources aren't loaded (yet?).
+        }
+        if (JBAM_DEPLOYMENT.panel) {
+            JBAM_DEPLOYMENT.panel.remove();
+        }
+        JBAM_DEPLOYMENT.panel =  new JBAM_DEPLOYMENT.RelatedDeploymentProjects.View({
+                                                                                    el: '#issue-deployments-panel-content',
+                                                                                    fetchUrl: '/jira/rest/bamboo/latest/deploy/YARN/YARN-6627',
+                                                                                    oAuthDanceReturnUrl: '/jira/browse/YARN-6627',
+                                                                                    issueId: '13073476'
+                                                                                });
+    }(AJS.$, window.JBAM_DEPLOYMENT));
+</script>
+</div></div></div></div>
+                    </div>
+                </div>
+                        </div>
+
+    <fieldset class="hidden parameters">
+        <input type="hidden" title="autocompleteEnabled" value="true"/>
+    </fieldset>
+    
+    </section>
+    <footer id="footer" role="contentinfo">
+        
+        
+
+<section class="footer-body">
+
+
+
+<ul class="atlassian-footer">
+    <li>
+        Atlassian JIRA <a class="seo-link" href="https://www.atlassian.com/software/jira">Project Management Software</a>
+
+                                    
+                        
+        <span id="footer-build-information">(v6.3.15#6346-<span title='dbc023dd75cecacf443c4b235f66124b15f5c5fe' data-commit-id='dbc023dd75cecacf443c4b235f66124b15f5c5fe}'>sha1:dbc023d</span>)</span>
+    </li>
+    <li>
+        <a id="about-link" href="/jira/secure/AboutPage.jspa">About JIRA</a>
+    </li>
+    <li>
+                        <a id="footer-report-problem-link" href="/jira/secure/CreateIssue!default.jspa">Report a problem</a>
+    </li>
+</ul>
+    <ul class="atlassian-footer">
+        <li class="licensemessage">
+                            Powered by a free Atlassian <a href='http://www.atlassian.com/software/jira'>JIRA</a> open source license for Apache Software Foundation. Try JIRA - <a href='http://www.atlassian.com/software/jira'>bug tracking software</a> for <i>your</i> team.
+
+                    </li>
+    </ul>
+
+<form id="jira_request_timing_info" class="dont-default-focus" >
+	<fieldset class="parameters hidden">
+		<input type="hidden" title="jira.request.start.millis" value="1495729371157" />
+		<input type="hidden" title="jira.request.server.time" value="286" />
+		<input type="hidden" title="jira.request.id" value="982x63677350x6" />
+		<input type="hidden" title="jira.session.expiry.time" value="1495747242380" />
+		<input type="hidden" title="jira.session.expiry.in.mins" value="297" />
+		<input id="jiraConcurrentRequests" type="hidden" name="jira.request.concurrent.requests" value="4" />
+	</fieldset>
+</form>
+<!--
+	                 REQUEST ID : 982x63677350x6
+	          REQUEST TIMESTAMP : [25/May/2017:16:22:51 +0000]
+	               REQUEST TIME : 0.2860
+	                 ASESSIONID : 1wflpr6
+	        CONCURRENT REQUESTS : 4
+
+	                      db.reads : name=db.reads; inv=94; ms=102; cpu=0; rss=0;
+	                     db.writes : name=db.writes; inv=2; ms=6; cpu=0; rss=0;
+	                      db.conns : name=db.conns; inv=117; ms=146; cpu=0; rss=0;
+-->
+    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+</section>
+
+
+
+
+
+
+
+
+
+<fieldset class="hidden parameters">
+    <input type="hidden" title="loggedInUser" value="zhenyi">
+    <input type="hidden" title="ajaxTimeout" value="The call to the JIRA server did not complete within the timeout period.  We are unsure of the result of this operation.">
+    <input type="hidden" title="JiraVersion" value="6.3.15" />
+    <input type="hidden" title="ajaxUnauthorised" value="You are not authorised to perform this operation. Please log in.">
+    <input type="hidden" title="baseURL" value="https://issues.apache.org:443/jira">
+    <input type="hidden" title="ajaxCommsError" value="The JIRA server could not be contacted. This may be a temporary glitch or the server may be down.">
+    <input type="hidden" title="ajaxServerError" value="The JIRA server was contacted but has returned an error response. We are unsure of the result of this operation.">
+    <input type="hidden" title="ajaxErrorCloseDialog" value="Close this dialog and press refresh in your browser">
+    <input type="hidden" title="ajaxErrorDialogHeading" value="Communications Breakdown">
+
+    <input type="hidden" title="dirtyMessage" value="You have entered new data on this page. If you navigate away from this page without first saving your data, the changes will be lost.">
+    <input type="hidden" title="dirtyDialogMessage" value="You have entered new data in this dialog. If you navigate away from this dialog without first saving your data, the changes will be lost. Click cancel to return to the dialog.">
+    <input type="hidden" title="keyType" value="Type">
+    <input type="hidden" title="keyThen" value="then">
+    <input type="hidden" title="dblClickToExpand" value="Double click to expand">
+    <input type="hidden" title="actions" value="Actions">
+    <input type="hidden" title="removeItem" value="Remove">
+    <input type="hidden" title="workflow" value="Workflow">
+    <input type="hidden" title="labelNew" value="New Label">
+    <input type="hidden" title="issueActionsHint" value="Begin typing for available operations or press down to see all">
+    <input type="hidden" title="closelink" value="Close">
+    <input type="hidden" title="dotOperations" value="Operations">
+    <input type="hidden" title="dotLoading" value="Loading...">
+    <input type="hidden" title="frotherSuggestions" value="Suggestions">
+    <input type="hidden" title="frotherNomatches" value="No Matches">
+    <input type="hidden" title="multiselectVersionsError" value="{0} is not a valid version.">
+    <input type="hidden" title="multiselectComponentsError" value="{0} is not a valid component.">
+    <input type="hidden" title="multiselectGenericError" value="The value {0} is invalid.">
+</fieldset>
+
+    </footer>
+</div>
+</body>
+</html>
